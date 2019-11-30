@@ -29,6 +29,8 @@ from webob.static import DirectoryApp
 PATH = os.path.dirname(__file__)
 # arp_proxy
 import threading  # timer
+# user defined
+import setting
 #import time
 ETHERNET = ethernet.ethernet.__name__
 ETHERNET_MULTICAST = "ff:ff:ff:ff:ff:ff"
@@ -74,8 +76,8 @@ class SFCController(ControllerBase):
     def sfc_add_flow(self,req, **kwargs):
         sfc_app = self.sfc_api_app
         # get sfc information
-        #---------------connect to db.sqlite----------------------------------
-        conn = sqlite3.connect('db.sqlite')
+        #---------------connect to sfc_db.sqlite----------------------------------
+        conn = sqlite3.connect('sfc_db.sqlite')
         cur = conn.cursor()
         cur.execute('''select * from sfc where sfc_nsh_spi = ?''',(kwargs['sfc_nsh_spi'],))
         flow_spec = cur.fetchone()
@@ -94,7 +96,7 @@ class SFCController(ControllerBase):
                 sfc_path.append(i)
         print "sfc_path:",sfc_path
         conn.close()
-        #---------------close db.sqlite---------------------------------------
+        #---------------close sfc_db.sqlite---------------------------------------
         sf_ip_index = 0
         if sf_ip[sf_ip_index] != None:
             next_sf_ip = sf_ip[sf_ip_index]
@@ -250,6 +252,7 @@ class sfc_app (app_manager.RyuApp):
         self.awareness = kwargs["network_awareness"]
         self.topology_api_app = self
         self.mac_to_port = {}      # {dpid:{mac:port}}   # packet_in_handler,sfc use #每一个dpid都有
+                                   # 7: {'00:00:00:00:00:03': 3, '00:00:00:00:00:01': 1}
         self.datapaths = {}        # {dpid:Datapath object}  # sfc use
         self.link_to_port = {}     # {(src_dpid,dst_dpid):(src_port,dst_port)}    links 两个方向  # sfc use
         self.host_or_switch = {}   # {(dpid,port):SWITCH}                         node type  #还没用
@@ -264,6 +267,15 @@ class sfc_app (app_manager.RyuApp):
 #        timer = threading.Timer(1, self.fun_timer)  
 #        timer.start()
         # arp_proxy ----------------------------------------------------------
+        
+        # read database-------------------------------------------------------
+        self.mac_to_port = setting.read_from_database_mac_to_port()
+#        print 'self.mac_to_port:', self.mac_to_port
+        
+        
+        
+        
+        # read database-------------------------------------------------------
         
     def fun_timer(self):  # 定时删除arp记录   # 其实arp代理只要第一次记录到字典里就行了，以后arp缓存过期了也可以直接代理回复
         try:                                  # 不需要定时删除记录，记录就一直保持就行了
@@ -440,7 +452,8 @@ class sfc_app (app_manager.RyuApp):
                                   in_port=in_port, actions=actions, data=data)
         datapath.send_msg(out)
         
-#        print "self.mac_to_port:%r\n" % self.mac_to_port  #cx
+        print "self.mac_to_port:%r\n" % self.mac_to_port  #cx
+        setting.write_to_database_mac_to_port(self.mac_to_port)
         
         # shortest path
         if eth.ethertype == ether_types.ETH_TYPE_IP:

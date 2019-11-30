@@ -37,8 +37,11 @@ from ryu.lib import hub
 
 from ryu.topology import event, switches
 from ryu.topology.api import get_switch, get_link
-import setting
 import matplotlib.pyplot as plt
+
+# user defined
+import setting
+
 
 CONF = cfg.CONF
 
