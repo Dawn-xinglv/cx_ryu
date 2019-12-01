@@ -44,7 +44,7 @@ sfc_instance_name = 'sfc_api_app'
 GOTOTABLE = 1    
 ACTIONS   = 0
 
-#create_link_port()   self.host_or_switch = {}
+#create_link_to_port()   self.host_or_switch = {}
 SWITCH = 1
 HOST   = 2
 
@@ -251,10 +251,11 @@ class sfc_app (app_manager.RyuApp):
         wsgi.register(SFCController, {sfc_instance_name: self})
         self.awareness = kwargs["network_awareness"]
         self.topology_api_app = self
+        self.datapaths = {}        # {dpid:Datapath object}  # sfc use  # no database
         self.mac_to_port = {}      # {dpid:{mac:port}}   # packet_in_handler,sfc use #每一个dpid都有
                                    # 7: {'00:00:00:00:00:03': 3, '00:00:00:00:00:01': 1}
-        self.datapaths = {}        # {dpid:Datapath object}  # sfc use
         self.link_to_port = {}     # {(src_dpid,dst_dpid):(src_port,dst_port)}    links 两个方向  # sfc use
+                                   # myapp and network_awareness are same
         self.host_or_switch = {}   # {(dpid,port):SWITCH}                         node type  #还没用
         self.weight = 'weight'
         self.pre_path = []
@@ -271,8 +272,8 @@ class sfc_app (app_manager.RyuApp):
         # read database-------------------------------------------------------
         self.mac_to_port = setting.read_from_database_mac_to_port()
 #        print 'self.mac_to_port:', self.mac_to_port
-        
-        
+        self.link_to_port = setting.read_from_database_link_to_port()
+#        print 'myapp>>> self.link_to_port:', self.link_to_port
         
         
         # read database-------------------------------------------------------
@@ -349,7 +350,7 @@ class sfc_app (app_manager.RyuApp):
                 del self.datapaths[datapath.id]
                 print "myapp>>> datapath %r left" % datapath.id
         #cx
-#        print "self.datapaths{}:%r\n" % self.datapaths
+#        print "self.datapaths:%r\n" % self.datapaths
 
                 
                 
@@ -452,7 +453,7 @@ class sfc_app (app_manager.RyuApp):
                                   in_port=in_port, actions=actions, data=data)
         datapath.send_msg(out)
         
-        print "self.mac_to_port:%r\n" % self.mac_to_port  #cx
+#        print "self.mac_to_port:%r\n" % self.mac_to_port  #cx
         setting.write_to_database_mac_to_port(self.mac_to_port)
         
         # shortest path
@@ -497,7 +498,8 @@ class sfc_app (app_manager.RyuApp):
             self.link_to_port[(src.dpid, dst.dpid)] = (src.port_no, dst.port_no)
             self.host_or_switch[(src.dpid, src.port_no)] = SWITCH
             self.host_or_switch[(dst.dpid, dst.port_no)] = SWITCH
-#        print "self.link_to_port{}: %r\n" % self.link_to_port  #cx
+#        print "myapp>>> self.link_to_port: %r\n" % self.link_to_port  #cx
+#        setting.write_to_database_link_to_port(self.link_to_port)
 
         for host in host_list:   # host -> ryu.topology.switches.Host object
             port = host.port     # port -> ryu.topology.switches.Port object

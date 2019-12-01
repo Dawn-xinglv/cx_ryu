@@ -83,6 +83,14 @@ class NetworkAwareness(app_manager.RyuApp):
         self.shortest_paths = None
         # Start a green thread to discover network resource.
         self.discover_thread = hub.spawn(self._discover)
+        
+        # read database-------------------------------------------------------
+        self.link_to_port = setting.read_from_database_link_to_port()
+#        print 'awareness>>> self.link_to_port:', self.link_to_port
+        
+        
+        # read database-------------------------------------------------------
+        
 
     def _discover(self):
         while True:
@@ -92,7 +100,7 @@ class NetworkAwareness(app_manager.RyuApp):
                 pass
             except Exception:
                 print "please input pingall in mininet and wait a moment"
-            hub.sleep(10)
+            hub.sleep(10)  # 60
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
@@ -193,7 +201,8 @@ class NetworkAwareness(app_manager.RyuApp):
                 self.interior_ports[link.src.dpid].add(link.src.port_no)
             if link.dst.dpid in self.switches:
                 self.interior_ports[link.dst.dpid].add(link.dst.port_no)
-            
+           
+        setting.write_to_database_link_to_port(self.link_to_port)
 
     def create_access_ports(self):
         """
@@ -268,7 +277,7 @@ class NetworkAwareness(app_manager.RyuApp):
 #        print "self.switches:%r" % self.switches
         
         self.create_interior_links(get_link(self.topology_api_app))
-#        print "self.link_to_port:%r" % self.link_to_port
+#        print "awareness>>> self.link_to_port:%r" % self.link_to_port
 #        print "self.interior_ports:%r" % self.interior_ports
         
         self.create_access_ports()
