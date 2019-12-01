@@ -152,18 +152,50 @@ if __name__=='__main__':
     
     
     # 从数据库读self.link_to_port
-    link_to_port = {} 
-    cur.execute('SELECT src_dpid,dst_dpid,src_port,dst_port from link_to_port')
-    link_to_port_items = cur.fetchall()  # link_to_port_items:list, link_to_port_items: [(2, 7, 2, 1), (7, 3, 2, 2), (4, 7, 2, 3), (2, 6, 1, 1), (4, 6, 1, 3), (6, 4, 3, 1), (5, 6, 1, 4), (5, 7, 2, 4), (7, 4, 3, 2), (6, 3, 2, 1), (7, 5, 4, 2), (7, 2, 1, 2), (3, 6, 1, 2), (6, 2, 1, 1), (3, 7, 2, 2), (6, 5, 4, 1)]
-    print 'link_to_port_items:', link_to_port_items
-    for src_dpid,dst_dpid,src_port,dst_port in link_to_port_items:
-#        print 'src_dpid:', src_dpid
-#        print 'dst_dpid:', dst_dpid
-#        print 'src_port:', src_port
-#        print 'dst_port:', dst_port
-        link_to_port[(src_dpid, dst_dpid)] = (src_port, dst_port)
-        
-    print 'link_to_port:', link_to_port
+#    link_to_port = {} 
+#    cur.execute('SELECT src_dpid,dst_dpid,src_port,dst_port from link_to_port')
+#    link_to_port_items = cur.fetchall()  # link_to_port_items:list, link_to_port_items: [(2, 7, 2, 1), (7, 3, 2, 2), (4, 7, 2, 3), (2, 6, 1, 1), (4, 6, 1, 3), (6, 4, 3, 1), (5, 6, 1, 4), (5, 7, 2, 4), (7, 4, 3, 2), (6, 3, 2, 1), (7, 5, 4, 2), (7, 2, 1, 2), (3, 6, 1, 2), (6, 2, 1, 1), (3, 7, 2, 2), (6, 5, 4, 1)]
+#    print 'link_to_port_items:', link_to_port_items
+#    for src_dpid,dst_dpid,src_port,dst_port in link_to_port_items:
+##        print 'src_dpid:', src_dpid
+##        print 'dst_dpid:', dst_dpid
+##        print 'src_port:', src_port
+##        print 'dst_port:', dst_port
+#        link_to_port[(src_dpid, dst_dpid)] = (src_port, dst_port)      
+#    print 'link_to_port:', link_to_port
+    
+    
+    # 将self.pre_path写入数据库
+#    pre_path = [3,6,4,7]  # 长度不固定
+#    
+#    temp = map(str,pre_path)  
+#    row = ','.join(temp)   # row:string  '3,6,4'
+#    print 'row:', row
+#    
+#    cur.execute('SELECT * from pre_path') #查询数据库中的pre_path
+#    row_exist = cur.fetchone() 
+#    print 'row_exist:', row_exist
+#    if row_exist == None:    # add 
+#        cur.execute('''insert into pre_path(pre_path) values(?)''', (row,))
+#    else:  # not none
+#        row_exist = list(row_exist)
+#        print 'row_exist[0]:', row_exist[0]
+#        if row != row_exist[0]:  # update
+#            cur.execute('''update pre_path set pre_path=?''', (row,))
+
+    #从数据库读self.pre_path
+    pre_path = []
+    cur.execute('SELECT * from pre_path') 
+    temp = cur.fetchone()   
+    print 'temp:', temp
+    pre_path_str = temp[0]
+#    print 'pre_path_str:', pre_path_str
+    pre_path = pre_path_str.split(',')
+#    print 'pre_path:', pre_path
+    pre_path = map(int, pre_path)
+    print 'pre_path:', pre_path
+    
+    
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()

@@ -256,7 +256,7 @@ class sfc_app (app_manager.RyuApp):
                                    # 7: {'00:00:00:00:00:03': 3, '00:00:00:00:00:01': 1}
         self.link_to_port = {}     # {(src_dpid,dst_dpid):(src_port,dst_port)}    links 两个方向  # sfc use
                                    # myapp and network_awareness are same
-        self.host_or_switch = {}   # {(dpid,port):SWITCH}                         node type  #还没用
+        self.host_or_switch = {}   # {(dpid,port):SWITCH}   node type  #还没用，先不写数据库
         self.weight = 'weight'
         self.pre_path = []
 #        self.discover_thread = hub.spawn(self._discover_links)
@@ -274,6 +274,10 @@ class sfc_app (app_manager.RyuApp):
 #        print 'self.mac_to_port:', self.mac_to_port
         self.link_to_port = setting.read_from_database_link_to_port()
 #        print 'myapp>>> self.link_to_port:', self.link_to_port
+        self.pre_path = setting.read_from_database_pre_path()
+#        print 'myapp>>> self.pre_path:', self.pre_path
+        
+        
         
         
         # read database-------------------------------------------------------
@@ -399,13 +403,14 @@ class sfc_app (app_manager.RyuApp):
             datapath.send_msg(out)               
             return
             
-        print "pkt.get_protocols:", pkt.get_protocols, '\n'
+#        print "pkt.get_protocols:", pkt.get_protocols, '\n'
+        
         header_list = dict( (p.protocol_name, p)for p in pkt.protocols if type(p) != str)
 #        print "header_list:", header_list
         if ipv4 in header_list:
             ipv4_packet = pkt.get_protocols(ipv4.ipv4)[0]
 #            print "pkt.get_protocols(ipv4.ipv4)[0]:", pkt.get_protocols(ipv4.ipv4)[0], '\n'
-            if ipv4_packet.src == "0.0.0.0" or ipv4_packet.dst == "255.255.255.255":
+            if ipv4_packet.src == "0.0.0.0" or ipv4_packet.dst == "255.255.255.255":    # DHCP广播包
 #                print "Drop ip_src == 0.0.0.0 or ip_dst == 255.255.255.255"  
                 out = datapath.ofproto_parser.OFPPacketOut(            
                     datapath=datapath,                                 
@@ -460,7 +465,7 @@ class sfc_app (app_manager.RyuApp):
         if eth.ethertype == ether_types.ETH_TYPE_IP:
             ip_pkt = pkt.get_protocol(ipv4.ipv4)
             self.shortest_forwarding(msg, eth.ethertype, ip_pkt.src, ip_pkt.dst)
-        print "self.awareness.access_table_distinct:%r" % self.awareness.access_table_distinct, '\n'
+#        print "self.awareness.access_table_distinct:%r" % self.awareness.access_table_distinct, '\n'
                 
 # Function definitions 
 
@@ -504,6 +509,7 @@ class sfc_app (app_manager.RyuApp):
         for host in host_list:   # host -> ryu.topology.switches.Host object
             port = host.port     # port -> ryu.topology.switches.Port object
             self.host_or_switch[(port.dpid, port.port_no)] = HOST
+        
             
     # List the event list should be listened.
     events = [event.EventSwitchEnter, event.EventSwitchLeave, 
@@ -728,9 +734,12 @@ class sfc_app (app_manager.RyuApp):
                 # Path has already calculated, just get it.
                 path = self.get_path(src_sw, dst_sw, weight=self.weight)
 #                print "src_sw:%r, dst_sw:%r" % (src_sw, dst_sw)  #cx
+#                print "pre_path:", self.pre_path
+#                print "path:", path
                 if path != self.pre_path:
                     self.logger.info("dijkstra_path>>> PATH[%s --> %s]: %s" % (ip_src, ip_dst, path))
                     self.pre_path = path
+                    setting.write_to_database_pre_path(self.pre_path)
                     
                     flow_info = (eth_type, ip_src, ip_dst)
                     # install flow entries to datapath along side the path.

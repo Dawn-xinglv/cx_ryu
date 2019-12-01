@@ -100,7 +100,7 @@ class NetworkAwareness(app_manager.RyuApp):
                 pass
             except Exception:
                 print "please input pingall in mininet and wait a moment"
-            hub.sleep(10)  # 60
+            hub.sleep(30)  # 60
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
