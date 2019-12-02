@@ -157,6 +157,50 @@ def read_from_database_pre_path():
     return pre_path
     
     
+def write_to_database_arp_table(data):
+    conn = sqlite3.connect('sfc_db.sqlite')   # open database
+    cur = conn.cursor()  
+    
+    arp_table_items = data.items()   # 把字典变成列表，元素变成元组
+#    print 'arp_table_items:', arp_table_items  # arp_table_items: [('192.168.20.31', '00:00:00:00:00:03'), ('192.168.20.21', '00:00:00:00:00:01')]
+
+    for row in arp_table_items:       # outer_data -> tuple, outer_data: ('192.168.20.31', '00:00:00:00:00:03')
+#        print 'row:', row
+#        print 'row:[0]', row[0]
+        cur.execute('SELECT id,ip,mac from arp_table where ip=?', (row[0],))  # 查询某个ip是否存在，注意ip和mac对应关系可能会变，所以mac需要更新
+        row_exist = cur.fetchone()  
+#        print 'row_exist:', row_exist
+        
+        if row_exist == None:    # add 
+            cur.execute('''insert into arp_table(ip,mac,time) values(?, ?, datetime('now','localtime'))''', (row[0],row[1])) 
+        else:   # update port
+            if row[1] != row_exist[2]:
+                cur.execute('''update arp_table set mac=?, time=datetime('now','localtime') where id=? ''', (row[1],row_exist[0]))
+    conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
+    conn.close()
+    print 'write to database <arp_table> table successfully'
+    
+    
+def read_from_database_arp_table():
+    conn = sqlite3.connect('sfc_db.sqlite')   # open database
+    cur = conn.cursor()
+    
+    arp_table = {} 
+    cur.execute('SELECT ip,mac from arp_table')
+    arp_table_items = cur.fetchall()  # arp_table_items: [(u'192.168.20.31', u'00:00:00:00:00:03'), (u'192.168.20.21', u'00:00:00:00:00:01'), (u'192.168.20.42', u'00:00:00:00:00:07')]
+#    print 'arp_table_items:', arp_table_items
+    for ip,mac in arp_table_items:
+#        print 'ip:', ip
+#        print 'mac:', mac
+        arp_table[ip] = mac     
+#    print 'arp_table:', arp_table
+    
+    conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
+    conn.close()
+    print 'read from database <arp_table> table successfully'
+    return arp_table
+    
+    
     
     
     

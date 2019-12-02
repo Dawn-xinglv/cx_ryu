@@ -263,7 +263,7 @@ class sfc_app (app_manager.RyuApp):
         # arp_proxy ----------------------------------------------------------
         self.arp_table = {}
         self.sw_dict = {}
-        self.sw_list = []   
+        self.sw_list = []
         
 #        timer = threading.Timer(1, self.fun_timer)  
 #        timer.start()
@@ -276,7 +276,8 @@ class sfc_app (app_manager.RyuApp):
 #        print 'myapp>>> self.link_to_port:', self.link_to_port
         self.pre_path = setting.read_from_database_pre_path()
 #        print 'myapp>>> self.pre_path:', self.pre_path
-        
+        self.arp_table = setting.read_from_database_arp_table()
+#        print 'myapp>>> self.arp_table:', self.arp_table
         
         
         
@@ -423,7 +424,9 @@ class sfc_app (app_manager.RyuApp):
                 
         
         if ARP in header_list:
-            self.arp_table[header_list[ARP].src_ip] = src  # ARP learning        
+            self.arp_table[header_list[ARP].src_ip] = src  # ARP learning 
+            setting.write_to_database_arp_table(self.arp_table)
+#            print 'self.arp_table:', self.arp_table
         
         self.mac_to_port.setdefault(dpid, {})  #每一个dpid的值都是一个字典
         self.logger.info("myapp>>> packet in dpid:%s src:%s dst:%s in_port:%s", dpid, src, dst, in_port)
