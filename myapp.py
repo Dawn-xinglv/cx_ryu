@@ -255,8 +255,8 @@ class sfc_app (app_manager.RyuApp):
         self.datapaths = {}        # {dpid:Datapath object}  # sfc use  # no database
         self.mac_to_port = {}      # {dpid:{mac:port}}   # packet_in_handler,sfc use #每一个dpid都有
                                    # 7: {'00:00:00:00:00:03': 3, '00:00:00:00:00:01': 1}
-        self.link_to_port = {}     # {(src_dpid,dst_dpid):(src_port,dst_port)}    links 两个方向  # sfc use
-                                   # myapp and network_awareness are same
+        self.link_to_port = {}     # {(src_dpid,dst_dpid):(src_port,dst_port)}    links 两个方向 
+                                   # myapp and network_awareness self.link_to_port are same
         self.host_or_switch = {}   # {(dpid,port):SWITCH}   node type  #还没用，先不写数据库
         self.weight = 'weight'
         self.pre_path = []
@@ -475,7 +475,6 @@ class sfc_app (app_manager.RyuApp):
             ip_pkt = pkt.get_protocol(ipv4.ipv4)
             self.shortest_forwarding(msg, eth.ethertype, ip_pkt.src, ip_pkt.dst)
         
-#        print "self.awareness.access_table_distinct:%r" % self.awareness.access_table_distinct, '\n'
                 
 # Function definitions 
 

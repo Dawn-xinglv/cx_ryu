@@ -69,18 +69,18 @@ class NetworkAwareness(app_manager.RyuApp):
         super(NetworkAwareness, self).__init__(*args, **kwargs)
         self.topology_api_app = self
         self.name = "awareness"
-        self.switches = []           # [dpid]  [1, 2]
-        self.link_to_port = {}       # {(src_dpid,dst_dpid):(src_port,dst_port)}  {(1, 2): (2, 1), (2, 1): (1, 2)}
-        self.access_table = {}       # {(dpid,port):(host_ip,host_mac)}  {(1, 1): ('192.168.2.100', '00:00:00:00:00:01'), (2, 1): ('192.168.2.200', '00:00:00:00:00:02')}
+        self.switches = []             # get from self.switch_port_table              # [dpid]  [1, 2]   
+        self.link_to_port = {}                                                        # {(src_dpid,dst_dpid):(src_port,dst_port)}  {(1, 2): (2, 1), (2, 1): (1, 2)}
+        self.access_table = {}         # get from self.access_table_distinct          # {(dpid,port):(host_ip,host_mac)}  {(1, 1): ('192.168.2.100', '00:00:00:00:00:01'), (2, 1): ('192.168.2.200', '00:00:00:00:00:02')}
         self.access_table_distinct = {} 
-        self.switch_port_table = {}  # dpip->port_num  {1: set([1, 2]), 2: set([1, 2])}  # 某个交换机的所有端口
-        self.access_ports = {}       # dpid->port_num  {1: set([1]), 2: set([2])}  #连其他的端口，比如主机
-        self.interior_ports = {}     # dpid->port_num  {1: set([2]), 2: set([1])}  #连交换机的端口
-        self.graph = nx.DiGraph()    # 有向图
-        self.pre_graph = nx.DiGraph()
-        self.pre_access_table = {}
-        self.pre_link_to_port = {}
-        self.shortest_paths = None
+        self.switch_port_table = {}    # get from get_switch(self.topology_api_app)   # dpip->port_num  {1: set([1, 2]), 2: set([1, 2])}  # 某个交换机的所有端口
+        self.access_ports = {}         # get from self.switch_port_table[sw] - self.interior_ports[sw]    # dpid->port_num  {1: set([1]), 2: set([2])}  #连其他的端口，比如主机
+        self.interior_ports = {}       # get from get_link(self.topology_api_app)     # dpid->port_num  {1: set([2]), 2: set([1])}  #连交换机的端口
+        self.graph = nx.DiGraph()      # get from self.link_to_port.keys()            # directed graph
+        self.pre_graph = nx.DiGraph()  # get from self.graph                          # use for show_topology
+        self.pre_access_table = {}     # get from self.access_table                   # use for show_topology
+        self.pre_link_to_port = {}     # get from self.link_to_port                   # use for show_topology
+        self.shortest_paths = None     # get from self.all_k_shortest_paths
         # Start a green thread to discover network resource.
         self.discover_thread = hub.spawn(self._discover)
         
@@ -88,8 +88,7 @@ class NetworkAwareness(app_manager.RyuApp):
         self.link_to_port = setting.read_from_database_link_to_port()
 #        print 'awareness>>> self.link_to_port:', self.link_to_port
         self.access_table_distinct = setting.read_from_database_access_table_distinct()
-#        print 'awareness>>> self.access_table_distinct:', self.access_table_distinct
-        
+#        print 'awareness>>> self.access_table_distinct:', self.access_table_distinct   
         # read database-------------------------------------------------------
         
 
@@ -101,7 +100,7 @@ class NetworkAwareness(app_manager.RyuApp):
                 pass
             except Exception:
                 print "please input pingall in mininet and wait a moment"
-            hub.sleep(30)  # 60
+            hub.sleep(60)  # 60
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
@@ -214,6 +213,24 @@ class NetworkAwareness(app_manager.RyuApp):
 #            interior_port = self.interior_ports[sw]
 #            self.access_ports[sw] = all_port_table - interior_port
             self.access_ports[sw] = self.switch_port_table[sw] - self.interior_ports[sw]
+            
+    def create_access_table(self):
+        """
+            Get self.access_table from self.access_table_distinct
+        """
+        access_table_distinct_items = self.access_table_distinct.items()  # 把字典变成列表，元素变成元组
+#        print('access_table_distinct_items:%r\n' % access_table_distinct_items) # access_table_distinct_items:[((2, 3, '192.168.20.21'), ('192.168.20.21', '00:00:00:00:00:01')), ((3, 3, '192.168.20.31'), ('192.168.20.31', '00:00:00:00:00:03'))]
+
+        for outer_data in access_table_distinct_items:    # outer_data -> tuple, outer_data: ((2, 3, '192.168.20.21'), ('192.168.20.21', '00:00:00:00:00:01'))
+            inner_keys = outer_data[0]           # inner_keys -> tuple, inner_keys: (2, 3, '192.168.20.21')
+            inner_values = outer_data[1]         # inner_values -> tuple, inner_values: ('192.168.20.21', '00:00:00:00:00:01') 
+            dpid = inner_keys[0]               # dpid
+            port = inner_keys[1]               # port
+            ip   = inner_values[0]             # ip_dup
+            mac  = inner_values[1]             # mac        
+            self.access_table[(dpid, port)] = (ip, mac)  
+           
+
 
     def k_shortest_paths(self, graph, src, dst, weight='weight', k=1):
         """
@@ -273,7 +290,7 @@ class NetworkAwareness(app_manager.RyuApp):
             Get topology info and calculate shortest paths.
         """
         self.create_port_map(get_switch(self.topology_api_app))
-        print "self.switch_port_table:%r" % self.switch_port_table
+#        print "self.switch_port_table:%r" % self.switch_port_table
         
         self.switches = self.switch_port_table.keys()
 #        print "self.switches:%r" % self.switches
@@ -284,6 +301,9 @@ class NetworkAwareness(app_manager.RyuApp):
         
         self.create_access_ports()
 #        print "self.access_ports:%r" % self.access_ports
+        
+        self.create_access_table()
+#        print "self.access_table:%r" % self.access_table
         
         self.get_graph(self.link_to_port.keys())
 #        print "self.graph:%r" % self.graph
@@ -307,13 +327,13 @@ class NetworkAwareness(app_manager.RyuApp):
                 if self.access_table_distinct[(dpid, in_port, ip)] == (ip, mac):  #cx  # same
                     return
                 else:  # update
-                    self.access_table[(dpid, in_port)] = (ip, mac)
+#                    self.access_table[(dpid, in_port)] = (ip, mac)
                     self.access_table_distinct[(dpid, in_port, ip)] = (ip, mac)  #cx
                     setting.write_to_database_access_table_distinct(self.access_table_distinct)
                     return
             else:  # add
-                self.access_table.setdefault((dpid, in_port), None)
-                self.access_table[(dpid, in_port)] = (ip, mac)
+#                self.access_table.setdefault((dpid, in_port), None)
+#                self.access_table[(dpid, in_port)] = (ip, mac)
                 
                 self.access_table_distinct.setdefault((dpid, in_port, ip), None)  #cx
                 self.access_table_distinct[(dpid, in_port, ip)] = (ip, mac)  #cx
