@@ -73,7 +73,7 @@ class NetworkAwareness(app_manager.RyuApp):
         self.link_to_port = {}       # {(src_dpid,dst_dpid):(src_port,dst_port)}  {(1, 2): (2, 1), (2, 1): (1, 2)}
         self.access_table = {}       # {(dpid,port):(host_ip,host_mac)}  {(1, 1): ('192.168.2.100', '00:00:00:00:00:01'), (2, 1): ('192.168.2.200', '00:00:00:00:00:02')}
         self.access_table_distinct = {} 
-        self.switch_port_table = {}  # dpip->port_num  {1: set([1, 2]), 2: set([1, 2])}
+        self.switch_port_table = {}  # dpip->port_num  {1: set([1, 2]), 2: set([1, 2])}  # 某个交换机的所有端口
         self.access_ports = {}       # dpid->port_num  {1: set([1]), 2: set([2])}  #连其他的端口，比如主机
         self.interior_ports = {}     # dpid->port_num  {1: set([2]), 2: set([1])}  #连交换机的端口
         self.graph = nx.DiGraph()    # 有向图
@@ -87,7 +87,8 @@ class NetworkAwareness(app_manager.RyuApp):
         # read database-------------------------------------------------------
         self.link_to_port = setting.read_from_database_link_to_port()
 #        print 'awareness>>> self.link_to_port:', self.link_to_port
-        
+        self.access_table_distinct = setting.read_from_database_access_table_distinct()
+#        print 'awareness>>> self.access_table_distinct:', self.access_table_distinct
         
         # read database-------------------------------------------------------
         
@@ -209,9 +210,10 @@ class NetworkAwareness(app_manager.RyuApp):
             Get ports without link into access_ports
         """
         for sw in self.switch_port_table:
-            all_port_table = self.switch_port_table[sw]
-            interior_port = self.interior_ports[sw]
-            self.access_ports[sw] = all_port_table - interior_port
+#            all_port_table = self.switch_port_table[sw]
+#            interior_port = self.interior_ports[sw]
+#            self.access_ports[sw] = all_port_table - interior_port
+            self.access_ports[sw] = self.switch_port_table[sw] - self.interior_ports[sw]
 
     def k_shortest_paths(self, graph, src, dst, weight='weight', k=1):
         """
@@ -271,7 +273,7 @@ class NetworkAwareness(app_manager.RyuApp):
             Get topology info and calculate shortest paths.
         """
         self.create_port_map(get_switch(self.topology_api_app))
-#        print "self.switch_port_table:%r" % self.switch_port_table
+        print "self.switch_port_table:%r" % self.switch_port_table
         
         self.switches = self.switch_port_table.keys()
 #        print "self.switches:%r" % self.switches
@@ -302,19 +304,21 @@ class NetworkAwareness(app_manager.RyuApp):
         """
         if in_port in self.access_ports[dpid]:
             if (dpid, in_port, ip) in self.access_table_distinct:
-                if self.access_table_distinct[(dpid, in_port, ip)] == (ip, mac):  #cx
+                if self.access_table_distinct[(dpid, in_port, ip)] == (ip, mac):  #cx  # same
                     return
-                else:
+                else:  # update
                     self.access_table[(dpid, in_port)] = (ip, mac)
                     self.access_table_distinct[(dpid, in_port, ip)] = (ip, mac)  #cx
+                    setting.write_to_database_access_table_distinct(self.access_table_distinct)
                     return
-            else:
+            else:  # add
                 self.access_table.setdefault((dpid, in_port), None)
                 self.access_table[(dpid, in_port)] = (ip, mac)
                 
                 self.access_table_distinct.setdefault((dpid, in_port, ip), None)  #cx
                 self.access_table_distinct[(dpid, in_port, ip)] = (ip, mac)  #cx
-                
+                setting.write_to_database_access_table_distinct(self.access_table_distinct)
+        
                 return
 
     @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
@@ -328,8 +332,8 @@ class NetworkAwareness(app_manager.RyuApp):
 #        print "myapp"
         msg = ev.msg
         datapath = msg.datapath
-        ofproto = datapath.ofproto
-        parser = datapath.ofproto_parser
+#        ofproto = datapath.ofproto
+#        parser = datapath.ofproto_parser
         in_port = msg.match['in_port']
         # 包过滤开始
         pkt = packet.Packet(msg.data)
@@ -344,7 +348,7 @@ class NetworkAwareness(app_manager.RyuApp):
             return
         dst = eth.dst
         src = eth.src
-        dpid = datapath.id
+#        dpid = datapath.id
         
         if dst == ETHERNET_GROUP_MULTICAST:
             # ignore mDNS packet
@@ -388,6 +392,7 @@ class NetworkAwareness(app_manager.RyuApp):
             # Record the access info
             self.register_access_info(datapath.id, in_port, src_ip, mac)
 #        print "aware>>> self.access_table:%r" % self.access_table
+#        print "self.access_table_distinct:%r" % self.access_table_distinct, '\n'
 
     def show_topology(self):
         switch_num = len(list(self.graph.nodes()))

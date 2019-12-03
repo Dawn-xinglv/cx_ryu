@@ -27,13 +27,14 @@ import network_awareness
 import os
 from webob.static import DirectoryApp
 PATH = os.path.dirname(__file__)
-# arp_proxy
-import threading  # timer
 # user defined
 import setting
+# arp_proxy
+import threading  # timer
 #import time
 ETHERNET = ethernet.ethernet.__name__
 ETHERNET_MULTICAST = "ff:ff:ff:ff:ff:ff"
+ETHERNET_ZERO = "00:00:00:00:00:00"
 ETHERNET_GROUP_MULTICAST = "01:00:5e:00:00:fb"
 ARP = arp.arp.__name__
 
@@ -259,12 +260,12 @@ class sfc_app (app_manager.RyuApp):
         self.host_or_switch = {}   # {(dpid,port):SWITCH}   node type  #还没用，先不写数据库
         self.weight = 'weight'
         self.pre_path = []
-#        self.discover_thread = hub.spawn(self._discover_links)
         # arp_proxy ----------------------------------------------------------
-        self.arp_table = {}
-        self.sw_dict = {}
-        self.sw_list = []
+        self.arp_table = {}        # arp_table: {'192.168.20.31': '00:00:00:00:00:03', '192.168.20.21': '00:00:00:00:00:01'}
+        self.sw_dict = {}          # 记录某个arp包之前有没有见过，不要写入数据库，要定时清空，这样某个主机arp到期之后再次发arp广播也可以获得回复
+        self.arp_clean_thread = hub.spawn(self._arp_clean)
         
+#        self.sw_list = []
 #        timer = threading.Timer(1, self.fun_timer)  
 #        timer.start()
         # arp_proxy ----------------------------------------------------------
@@ -279,33 +280,26 @@ class sfc_app (app_manager.RyuApp):
         self.arp_table = setting.read_from_database_arp_table()
 #        print 'myapp>>> self.arp_table:', self.arp_table
         
-        
-        
         # read database-------------------------------------------------------
         
-    def fun_timer(self):  # 定时删除arp记录   # 其实arp代理只要第一次记录到字典里就行了，以后arp缓存过期了也可以直接代理回复
-        try:                                  # 不需要定时删除记录，记录就一直保持就行了
-            pop_key = self.sw_list.pop(0)
-            del self.sw_dict[pop_key]
-#            print "self.sw_dict:", self.sw_dict
-        except:
-#            print "sw_dict is none"
-            pass
-        
-        global timer
-        timer = threading.Timer(30, self.fun_timer)
-        timer.start()
+#    def fun_timer(self):  # 定时删除arp记录   # 其实arp代理只要第一次记录到字典里就行了，以后arp缓存过期了也可以直接代理回复
+#        try:                                  # 不需要定时删除记录，记录就一直保持就行了
+#            pop_key = self.sw_list.pop(0)
+#            del self.sw_dict[pop_key]
+##            print "self.sw_dict:", self.sw_dict
+#        except:
+##            print "sw_dict is none"
+#            pass
+#        global timer
+#        timer = threading.Timer(30, self.fun_timer)
+#        timer.start()
     
-#    A thread to output the information of topology
-#    def _discover_links(self):
-#        while True:
-#            self.get_topology(None)
-#            try:
-#                self.show_topology()
-#                pass
-#            except Exception as err:
-#                print "please input pingall in mininet and wait a moment"
-#            hub.sleep(10)
+# 定时清空sw_dict的线程，以便arp缓存过期了也可以获得回复
+# 连续ping 30min以上应该也没事，应该会有arp_proxy_reply
+    def _arp_clean(self):
+        while True:
+            self.sw_dict.clear()
+            hub.sleep(30*60)  # 30min
 
 
 # Setting default rules upon DP is connected
@@ -404,7 +398,7 @@ class sfc_app (app_manager.RyuApp):
             datapath.send_msg(out)               
             return
             
-#        print "pkt.get_protocols:", pkt.get_protocols, '\n'
+        print "pkt.get_protocols:", pkt.get_protocols, '\n'
         
         header_list = dict( (p.protocol_name, p)for p in pkt.protocols if type(p) != str)
 #        print "header_list:", header_list
@@ -423,34 +417,49 @@ class sfc_app (app_manager.RyuApp):
         # 包过滤结束
                 
         
-        if ARP in header_list:
+        
+        
+        if ARP in header_list:  # arp packet
             self.arp_table[header_list[ARP].src_ip] = src  # ARP learning 
             setting.write_to_database_arp_table(self.arp_table)
-#            print 'self.arp_table:', self.arp_table
+#            print 'self.arp_table:', self.arp_table   
+            
+            arp_handler_return = self.arp_handler(header_list, datapath, in_port, msg.buffer_id)
+            # 2: Normal arp reply or other arp packet    1: reply or drop   0: flood
+            if arp_handler_return == 1:
+                return None
+            elif arp_handler_return == 2:
+                pass
+            else:
+                out_port = ofproto.OFPP_FLOOD
+        
         
         self.mac_to_port.setdefault(dpid, {})  #每一个dpid的值都是一个字典
         self.logger.info("myapp>>> packet in dpid:%s src:%s dst:%s in_port:%s", dpid, src, dst, in_port)
 
+
         if dst in self.mac_to_port[dpid]:
             out_port = self.mac_to_port[dpid][dst]     # self.mac_to_port[dpid][dst]->{'00:00:00:00:00:02':2}
-        else:
-            if self.arp_handler(header_list, datapath, in_port, msg.buffer_id):
-                # 1:reply or drop;  0: flood
-#                print "ARP_PROXY_13"
-                return None
-            else:
-                out_port = ofproto.OFPP_FLOOD
-#                print 'OFPP_FLOOD'
+#        else:
+#            if self.arp_handler(header_list, datapath, in_port, msg.buffer_id):
+#                # 1:reply or drop;  0: flood
+##                print "ARP_PROXY_13"
+#                return None
+#            else:
+#                out_port = ofproto.OFPP_FLOOD
+##                print 'OFPP_FLOOD'
                 
         # learn a mac address to avoid FLOOD next time.
         self.mac_to_port[dpid][src] = in_port          # self.mac_to_port[dpid][src]->{'00:00:00:00:00:01':1}
+#        print "self.mac_to_port:%r\n" % self.mac_to_port  #cx
+        setting.write_to_database_mac_to_port(self.mac_to_port)
         
         actions = [parser.OFPActionOutput(out_port)]
         
         # install a flow to avoid packet_in next time
         if out_port != ofproto.OFPP_FLOOD:
             match = parser.OFPMatch(eth_dst=dst)  # 去掉eth_src,in_port
-            self.add_flow(datapath, 1, match, actions, table_id=0, inst_flag=ACTIONS, idle_timeout=5, hard_timeout=15 )
+            self.add_flow(datapath, 1, match, actions, table_id=0, inst_flag=ACTIONS, idle_timeout=10, hard_timeout=15 )
 #            print "dpid:%r,src:%r,dst:%r,in_port:%r,out_port:%r\n" % (dpid, src, dst, in_port, out_port)
             
         #检查buffer_id，如果有dpid缓存就发空data，如果没有dpid缓存就发msg.data
@@ -461,13 +470,11 @@ class sfc_app (app_manager.RyuApp):
                                   in_port=in_port, actions=actions, data=data)
         datapath.send_msg(out)
         
-#        print "self.mac_to_port:%r\n" % self.mac_to_port  #cx
-        setting.write_to_database_mac_to_port(self.mac_to_port)
-        
-        # shortest path
+        # shortest path, only for ipv4 packet
         if eth.ethertype == ether_types.ETH_TYPE_IP:
             ip_pkt = pkt.get_protocol(ipv4.ipv4)
             self.shortest_forwarding(msg, eth.ethertype, ip_pkt.src, ip_pkt.dst)
+        
 #        print "self.awareness.access_table_distinct:%r" % self.awareness.access_table_distinct, '\n'
                 
 # Function definitions 
@@ -761,27 +768,51 @@ class sfc_app (app_manager.RyuApp):
             eth_dst = header_list[ETHERNET].dst
             eth_src = header_list[ETHERNET].src
 
+
+        # drop arp request unicast------
+        '''
+        奇怪的现象：如果源主机已经有了目的主机的arp缓存，那么按理来说ping的时候不需要发送arp，
+                   但在mininet上ping完之后等2秒左右就会发送一个arp请求单播，而且arp的目的mac是'00:00:00:00:00:00',
+                   ethernet的目的mac是目的主机。
+        在实际系统中还没测试过
+        对于这样的包，直接丢弃，然后在packet_in中返回
+        '''
+        arp_eth_dst = header_list[ARP].dst_mac
+#        print "arp_eth_dst:", arp_eth_dst
+        if arp_eth_dst == ETHERNET_ZERO and eth_dst != ETHERNET_MULTICAST:
+            out = datapath.ofproto_parser.OFPPacketOut(             
+                    datapath=datapath,
+                    buffer_id=datapath.ofproto.OFP_NO_BUFFER,           
+                    in_port=in_port,
+                    actions=[], data=None)
+            datapath.send_msg(out)
+            print 'ARP_PROXY: Drop arp request unicast'
+            return 1  # drop
+        # drop arp request unicast------
+
+
         if eth_dst == ETHERNET_MULTICAST and ARP in header_list: # arp广播包
             arp_dst_ip = header_list[ARP].dst_ip
             if (datapath.id, eth_src, arp_dst_ip) in self.sw_dict:  # Break the loop  # 该交换机之前见过这个arp广播包，丢弃
 #                if self.sw_dict[(datapath.id, eth_src, arp_dst_ip)] != in_port:  # 这一次的in_port跟第一次记录的in_port不一致
                 out = datapath.ofproto_parser.OFPPacketOut(             # 说明是环路广播回来的，丢弃
                     datapath=datapath,                                  # 如果全是ovs的话没问题，但是如果有传统交换机的话，它会一直广播，广播包就可能从同一个入端口进来
-                    buffer_id=datapath.ofproto.OFP_NO_BUFFER,           
+                    buffer_id=datapath.ofproto.OFP_NO_BUFFER,           # 解决办法：sw_dict不要写入数据库，并且定时清空sw_dict
                     in_port=in_port,
                     actions=[], data=None)
                 datapath.send_msg(out)
-                print "ARP_PROXY_13: Drop arp broadcast"
-                return True  # drop
+                print "ARP_PROXY: Drop arp broadcast"
+                return 1   # drop
             else:  # 该交换机第一次见这个广播包，记录in_port
                 self.sw_dict[(datapath.id, eth_src, arp_dst_ip)] = in_port
-                self.sw_list.append((datapath.id, eth_src, arp_dst_ip))
+                print 'self.sw_dict:', self.sw_dict
+#                self.sw_list.append((datapath.id, eth_src, arp_dst_ip))
 
-        if ARP in header_list:
-            hwtype = header_list[ARP].hwtype
-            proto = header_list[ARP].proto
-            hlen = header_list[ARP].hlen
-            plen = header_list[ARP].plen
+        if ARP in header_list:  # arp
+#            hwtype = header_list[ARP].hwtype
+#            proto = header_list[ARP].proto
+#            hlen = header_list[ARP].hlen
+#            plen = header_list[ARP].plen
             opcode = header_list[ARP].opcode
 
             arp_src_ip = header_list[ARP].src_ip
@@ -813,10 +844,14 @@ class sfc_app (app_manager.RyuApp):
                         in_port=datapath.ofproto.OFPP_CONTROLLER,
                         actions=actions, data=ARP_Reply.data)
                     datapath.send_msg(out)
-                    print "ARP_PROXY_13: Arp reply"
-                    return True  # arp_reply
-        print 'ARP_PROXY_13: OFPP_FLOOD'
-        return False
+                    print "ARP_PROXY: Arp reply"
+                    return 1  # arp_reply
+            else:
+                print "ARP_PROXY: Normal arp reply or other arp packet"
+                return 2  # other arp packet
+ 
+        print 'ARP_PROXY: Arp flood'
+        return 0
     # arp_proxy --------------------------------------------------------------
                                   
 app_manager.require_app('ryu.app.rest_topology')

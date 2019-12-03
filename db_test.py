@@ -216,16 +216,62 @@ if __name__=='__main__':
     
     
      # 从数据库读self.arp_table
-    arp_table = {} 
-    cur.execute('SELECT ip,mac from arp_table')
-    arp_table_items = cur.fetchall()  # arp_table_items: [(u'192.168.20.31', u'00:00:00:00:00:03'), (u'192.168.20.21', u'00:00:00:00:00:01'), (u'192.168.20.42', u'00:00:00:00:00:07')]
-    print 'arp_table_items:', arp_table_items
-    for ip,mac in arp_table_items:
-        print 'ip:', ip
-        print 'mac:', mac
-        arp_table[ip] = mac     
-    print 'arp_table:', arp_table
+#    arp_table = {} 
+#    cur.execute('SELECT ip,mac from arp_table')
+#    arp_table_items = cur.fetchall()  # arp_table_items: [(u'192.168.20.31', u'00:00:00:00:00:03'), (u'192.168.20.21', u'00:00:00:00:00:01'), (u'192.168.20.42', u'00:00:00:00:00:07')]
+#    print 'arp_table_items:', arp_table_items
+#    for ip,mac in arp_table_items:
+#        print 'ip:', ip
+#        print 'mac:', mac
+#        arp_table[ip] = mac     
+#    print 'arp_table:', arp_table
     
+    
+    # 将self.access_table_distinct写入数据库
+#    access_table_distinct = {(2, 3, '192.168.20.21'): ('192.168.20.21', '00:00:00:00:00:01'), 
+#                             (3, 3, '192.168.20.31'): ('192.168.20.31', '00:00:00:00:00:03')}
+#
+#    access_table_distinct_items = access_table_distinct.items()  # 把字典变成列表，元素变成元组
+#    print('access_table_distinct_items:%r\n' % access_table_distinct_items) # access_table_distinct_items:[((2, 3, '192.168.20.21'), ('192.168.20.21', '00:00:00:00:00:01')), ((3, 3, '192.168.20.31'), ('192.168.20.31', '00:00:00:00:00:03'))]
+#
+#    row = []   # single line data
+#    for outer_data in access_table_distinct_items:    # outer_data -> tuple, outer_data: ((2, 3, '192.168.20.21'), ('192.168.20.21', '00:00:00:00:00:01'))
+#        print 'outer_data:', outer_data
+#        inner_keys = outer_data[0]           # inner_keys -> tuple, inner_keys: (2, 3, '192.168.20.21')
+#        print 'inner_keys:', inner_keys
+#        inner_values = outer_data[1]         # inner_values -> tuple, inner_values: ('192.168.20.21', '00:00:00:00:00:01')
+#        print 'inner_values:', inner_values
+#
+#        row.append(inner_keys[0])          # dpid
+#        row.append(inner_keys[1])          # port
+#        row.append(inner_keys[2])          # ip
+#        row.append(inner_values[0])        # ip_dup
+#        row.append(inner_values[1])        # mac
+#        cur.execute('SELECT id,dpid,port,ip,ip_dup,mac from access_table_distinct where dpid=? and port=? and ip=? ', (row[0],row[1],row[2]))  # 查询某一个键(dpid,port,ip)是否存在，注意ip和mac对应关系可能会变，所以mac需要更新
+#        row_exist = cur.fetchone()            
+#        print 'row_exist:', row_exist
+#        if row_exist == None:    # add 
+#            cur.execute('''insert into access_table_distinct(dpid, port, ip, ip_dup, mac, time) values(?, ?, ?, ?, ?, datetime('now','localtime'))''', row) 
+#        else:   # not none
+#            if row[4] != row_exist[5]:   # update mac
+#                cur.execute('''update access_table_distinct set mac=?, time=datetime('now','localtime') where id=? ''', (row[4],row_exist[0]))
+#        print 'row:', row
+#        row = []   # clean   
+    
+    
+    # 从数据库读self.link_to_port
+    access_table_distinct = {} 
+    cur.execute('SELECT dpid,port,ip,ip_dup,mac from access_table_distinct')
+    access_table_distinct_items = cur.fetchall()  # access_table_distinct_items:list
+    print 'access_table_distinct_items:', access_table_distinct_items
+    for dpid,port,ip,ip_dup,mac in access_table_distinct_items:
+#        print 'dpid:', dpid
+#        print 'port:', port
+#        print 'ip:', ip
+#        print 'ip_dup:', ip_dup
+#        print 'mac:', mac
+        access_table_distinct[(dpid, port, ip)] = (ip_dup, mac)      
+    print 'access_table_distinct:', access_table_distinct
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()

@@ -173,8 +173,8 @@ def write_to_database_arp_table(data):
         
         if row_exist == None:    # add 
             cur.execute('''insert into arp_table(ip,mac,time) values(?, ?, datetime('now','localtime'))''', (row[0],row[1])) 
-        else:   # update port
-            if row[1] != row_exist[2]:
+        else:   # not none
+            if row[1] != row_exist[2]:  # update mac
                 cur.execute('''update arp_table set mac=?, time=datetime('now','localtime') where id=? ''', (row[1],row_exist[0]))
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
@@ -200,6 +200,63 @@ def read_from_database_arp_table():
     print 'read from database <arp_table> table successfully'
     return arp_table
     
+    
+def write_to_database_access_table_distinct(data):
+    conn = sqlite3.connect('sfc_db.sqlite')   # open database
+    cur = conn.cursor()
+    
+    access_table_distinct_items = data.items()  # 把字典变成列表，元素变成元组
+#    print('access_table_distinct_items:%r\n' % access_table_distinct_items) # access_table_distinct_items:[((2, 3, '192.168.20.21'), ('192.168.20.21', '00:00:00:00:00:01')), ((3, 3, '192.168.20.31'), ('192.168.20.31', '00:00:00:00:00:03'))]
+
+    row = []   # single line data
+    for outer_data in access_table_distinct_items:    # outer_data -> tuple, outer_data: ((2, 3, '192.168.20.21'), ('192.168.20.21', '00:00:00:00:00:01'))
+#        print 'outer_data:', outer_data
+        inner_keys = outer_data[0]           # inner_keys -> tuple, inner_keys: (2, 3, '192.168.20.21')
+#        print 'inner_keys:', inner_keys
+        inner_values = outer_data[1]         # inner_values -> tuple, inner_values: ('192.168.20.21', '00:00:00:00:00:01')
+#        print 'inner_values:', inner_values
+        row.append(inner_keys[0])          # dpid
+        row.append(inner_keys[1])          # port
+        row.append(inner_keys[2])          # ip
+        row.append(inner_values[0])        # ip_dup
+        row.append(inner_values[1])        # mac
+        cur.execute('SELECT id,dpid,port,ip,ip_dup,mac from access_table_distinct where dpid=? and port=? and ip=? ', (row[0],row[1],row[2]))  # 查询某一个键(dpid,port,ip)是否存在，注意ip和mac对应关系可能会变，所以mac需要更新
+        row_exist = cur.fetchone()            
+#        print 'row_exist:', row_exist
+        if row_exist == None:    # add 
+            cur.execute('''insert into access_table_distinct(dpid, port, ip, ip_dup, mac, time) values(?, ?, ?, ?, ?, datetime('now','localtime'))''', row) 
+        else:   # not none
+            if row[4] != row_exist[5]:   # update mac
+                cur.execute('''update access_table_distinct set mac=?, time=datetime('now','localtime') where id=? ''', (row[4],row_exist[0]))
+#        print 'row:', row
+        row = []   # clean   
+    
+    conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
+    conn.close()
+    print 'write to database <access_table_distinct> table successfully'
+    
+    
+def read_from_database_access_table_distinct():
+    conn = sqlite3.connect('sfc_db.sqlite')   # open database
+    cur = conn.cursor()
+    
+    access_table_distinct = {} 
+    cur.execute('SELECT dpid,port,ip,ip_dup,mac from access_table_distinct')
+    access_table_distinct_items = cur.fetchall()  # access_table_distinct_items:list
+#    print 'access_table_distinct_items:', access_table_distinct_items
+    for dpid,port,ip,ip_dup,mac in access_table_distinct_items:
+#        print 'dpid:', dpid
+#        print 'port:', port
+#        print 'ip:', ip
+#        print 'ip_dup:', ip_dup
+#        print 'mac:', mac
+        access_table_distinct[(dpid, port, ip)] = (ip_dup, mac)      
+#    print 'access_table_distinct:', access_table_distinct
+    
+    conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
+    conn.close()
+    print 'read from database <access_table_distinct> table successfully'
+    return access_table_distinct
     
     
     
