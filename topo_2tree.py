@@ -64,15 +64,15 @@ def topology():
     net.addLink(s7, s4)
     net.addLink(s7, s5)
     
-    net.addLink(cdn1,    s2)
-    net.addLink(client1, s2)
-    net.addLink(cdn2,    s3)
-    net.addLink(dns,     s3)
-    net.addLink(ids,     s3)
-    net.addLink(client2, s4)
-    net.addLink(cdn3,    s4)
-    net.addLink(firewall,s4)
-    net.addLink(web,     s5)
+    net.addLink(cdn1,    s2)  # eth3
+    net.addLink(client1, s2)  # eth4
+    net.addLink(cdn2,    s3)  # eth3
+    net.addLink(dns,     s3)  # eth4
+    net.addLink(ids,     s3)  # eth5
+    net.addLink(client2, s4)  # eth3
+    net.addLink(cdn3,    s4)  # eth4
+    net.addLink(firewall,s4)  # eth5
+    net.addLink(web,     s5)  # eth3
 
     print "*** Starting network"
     net.start()

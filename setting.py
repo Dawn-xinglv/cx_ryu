@@ -136,25 +136,25 @@ def write_to_database_pre_path(data):
     print 'write to database <pre_path> table successfully'
     
     
-def read_from_database_pre_path():
-    conn = sqlite3.connect('sfc_db.sqlite')   # open database
-    cur = conn.cursor()
-    
-    pre_path = []
-    cur.execute('SELECT * from pre_path') 
-    temp = cur.fetchone()   
-#    print 'temp:', temp
-    pre_path_str = temp[0]
-#    print 'pre_path_str:', pre_path_str
-    pre_path = pre_path_str.split(',')
-#    print 'pre_path:', pre_path
-    pre_path = map(int, pre_path)
-#    print 'pre_path:', pre_path
-    
-    conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
-    conn.close()
-    print 'read from database <pre_path> table successfully'
-    return pre_path
+#def read_from_database_pre_path():
+#    conn = sqlite3.connect('sfc_db.sqlite')   # open database
+#    cur = conn.cursor()
+#    
+#    pre_path = []
+#    cur.execute('SELECT * from pre_path') 
+#    temp = cur.fetchone()   
+##    print 'temp:', temp
+#    pre_path_str = temp[0]
+##    print 'pre_path_str:', pre_path_str
+#    pre_path = pre_path_str.split(',')
+##    print 'pre_path:', pre_path
+#    pre_path = map(int, pre_path)
+##    print 'pre_path:', pre_path
+#    
+#    conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
+#    conn.close()
+#    print 'read from database <pre_path> table successfully'
+#    return pre_path
     
     
 def write_to_database_arp_table(data):

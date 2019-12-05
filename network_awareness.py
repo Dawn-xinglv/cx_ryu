@@ -92,6 +92,8 @@ class NetworkAwareness(app_manager.RyuApp):
         # read database-------------------------------------------------------
         
 
+# 定时获取拓扑信息
+# 定时更新link_to_port, access_table_distinct
     def _discover(self):
         while True:
             self.get_topology(None)
@@ -305,6 +307,8 @@ class NetworkAwareness(app_manager.RyuApp):
         self.create_access_table()
 #        print "self.access_table:%r" % self.access_table
         
+        setting.write_to_database_access_table_distinct(self.access_table_distinct)
+        
         self.get_graph(self.link_to_port.keys())
 #        print "self.graph:%r" % self.graph
 #        nx.draw(self.graph)
@@ -355,7 +359,7 @@ class NetworkAwareness(app_manager.RyuApp):
 #        ofproto = datapath.ofproto
 #        parser = datapath.ofproto_parser
         in_port = msg.match['in_port']
-        # 包过滤开始
+
         pkt = packet.Packet(msg.data)
         eth = pkt.get_protocols(ethernet.ethernet)[0]  # pkt.get_protocols(ethernet.ethernet)是个列表，列表里只有一个元素，用[0]直接取出元素
                                                        # 所有的包都有以太网头部，所以能直接get，但是ip等协议需要判断是否存在
@@ -374,38 +378,20 @@ class NetworkAwareness(app_manager.RyuApp):
             # ignore mDNS packet
 #            print "Drop eth_dst == 01:00:5e:00:00:fb"
             return
-        if eth.ethertype == ether_types.ETH_TYPE_IP and dst == ETHERNET_MULTICAST:  # DHCP广播包, IP=0x0800
-            # ignore DHCP packet
-#            print "Drop ip_type and eth_dst == ff:ff:ff:ff:ff:ff"
-            return
-            
-#        print "pkt.get_protocols:", pkt.get_protocols, '\n'
-        header_list = dict( (p.protocol_name, p)for p in pkt.protocols if type(p) != str)
-#        print "header_list:", header_list
-        if ipv4 in header_list:
-            ipv4_packet = pkt.get_protocols(ipv4.ipv4)[0]
-#            print "pkt.get_protocols(ipv4.ipv4)[0]:", pkt.get_protocols(ipv4.ipv4)[0], '\n'
-            if ipv4_packet.src == "0.0.0.0" or ipv4_packet.dst == "255.255.255.255":
-                # ignore DHCP packet
-#                print "Drop ip_src == 0.0.0.0 or ip_dst == 255.255.255.255"    
-                return
-        # 包过滤结束
               
         # 获取access info
         arp_pkt = pkt.get_protocol(arp.arp)
-        ip_pkt = pkt.get_protocol(ipv4.ipv4)
+        ip_pkt = pkt.get_protocol(ipv4.ipv4)  # 如果没有这个包就赋值None
 #        print "ip_pkt:", ip_pkt, '\n'
         if arp_pkt:
+#            print 'arp'
             arp_src_ip = arp_pkt.src_ip
 #            arp_dst_ip = arp_pkt.dst_ip
             mac = arp_pkt.src_mac
             # Record the access info
             self.register_access_info(datapath.id, in_port, arp_src_ip, mac)
         elif ip_pkt:
-            if ip_pkt.src == "0.0.0.0" or ip_pkt.dst == "255.255.255.255":
-                # ignore DHCP packet
-#                print "Drop 0.0.0.0 -> 255.255.255.255"
-                return            
+#            print 'ipv4'           
             src_ip = ip_pkt.src
 #            dst_ip = ip_pkt.dst
             mac = src

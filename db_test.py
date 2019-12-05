@@ -259,19 +259,51 @@ if __name__=='__main__':
 #        row = []   # clean   
     
     
-    # 从数据库读self.link_to_port
-    access_table_distinct = {} 
-    cur.execute('SELECT dpid,port,ip,ip_dup,mac from access_table_distinct')
+    # 从数据库读self.access_table_distinct
+#    access_table_distinct = {} 
+#    cur.execute('SELECT dpid,port,ip,ip_dup,mac from access_table_distinct')
+#    access_table_distinct_items = cur.fetchall()  # access_table_distinct_items:list
+#    print 'access_table_distinct_items:', access_table_distinct_items
+#    for dpid,port,ip,ip_dup,mac in access_table_distinct_items:
+##        print 'dpid:', dpid
+##        print 'port:', port
+##        print 'ip:', ip
+##        print 'ip_dup:', ip_dup
+##        print 'mac:', mac
+#        access_table_distinct[(dpid, port, ip)] = (ip_dup, mac)      
+#    print 'access_table_distinct:', access_table_distinct
+    
+    
+    
+    cur.execute('SELECT ip_dup,mac from access_table_distinct')
     access_table_distinct_items = cur.fetchall()  # access_table_distinct_items:list
-    print 'access_table_distinct_items:', access_table_distinct_items
-    for dpid,port,ip,ip_dup,mac in access_table_distinct_items:
-#        print 'dpid:', dpid
-#        print 'port:', port
-#        print 'ip:', ip
-#        print 'ip_dup:', ip_dup
-#        print 'mac:', mac
-        access_table_distinct[(dpid, port, ip)] = (ip_dup, mac)      
-    print 'access_table_distinct:', access_table_distinct
+    access_table_distinct_items.sort()
+    print 'access_table_distinct_items:', access_table_distinct_items  # access_table_distinct_items: [(u'192.168.20.21', u'00:00:00:00:00:01'), (u'192.168.20.51', u'00:00:00:00:00:09'), (u'192.168.20.22', u'00:00:00:00:00:02'), (u'192.168.20.41', u'00:00:00:00:00:06'), (u'192.168.20.31', u'00:00:00:00:00:03'), (u'192.168.20.42', u'00:00:00:00:00:07'), (u'192.168.20.33', u'00:00:00:00:00:05'), (u'192.168.20.43', u'00:00:00:00:00:08'), (u'192.168.20.32', u'00:00:00:00:00:04')]
+    length = len(access_table_distinct_items)  
+    print 'length:', length
+    print 'range:', range(0, length-1)
+    
+    count = 0
+    if length > 1:
+        for i in range(0, length-1):
+#            print 'i:', i
+            src_ip  = access_table_distinct_items[i][0]
+            src_mac = access_table_distinct_items[i][1]
+#            print 'src:', src_ip, src_mac
+            for j in range(i+1, length):
+#                print 'j:', j
+                dst_ip  = access_table_distinct_items[j][0]
+                dst_mac = access_table_distinct_items[j][1]
+#                print 'dst:', dst_ip, dst_mac
+                count = count + 1
+                update_mac_to_port(src_mac, dst_mac, src_ip, dst_ip)
+     
+        print 'count:', count
+    
+
+           
+ 
+    
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
