@@ -17,6 +17,7 @@
 # limitations under the License.
 
 import logging
+import datetime
 import struct
 import copy
 import networkx as nx
@@ -86,11 +87,30 @@ class NetworkAwareness(app_manager.RyuApp):
         
         # read database-------------------------------------------------------
         self.link_to_port = setting.read_from_database_link_to_port()
-#        print 'awareness>>> self.link_to_port:', self.link_to_port
+        self.logger.debug('self.link_to_port: %r', self.link_to_port)
         self.access_table_distinct = setting.read_from_database_access_table_distinct()
-#        print 'awareness>>> self.access_table_distinct:', self.access_table_distinct   
+        self.logger.debug('self.access_table_distinct: %r', self.access_table_distinct)   
         # read database-------------------------------------------------------
         
+        # log configuration-----
+        self.logger = logging.getLogger(self.__class__.__name__)
+        self.logger.propagate = False   # 隔离父logger 
+        # filename:设置日志输出文件，以天为单位输出到不同的日志文件，以免单个日志文件日志信息过多，
+        # 日志文件如果不存在则会自动创建，但前面的路径如log文件夹必须存在，否则会报错
+        log_file = 'log/sys_%s.log' % datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d')
+        handler1 = logging.StreamHandler()                  # console
+        handler2 = logging.FileHandler(filename=log_file)   # log file
+        
+        self.logger.setLevel(logging.DEBUG)
+        handler1.setLevel(logging.INFO)  # level 20
+        handler2.setLevel(logging.DEBUG) # level 10
+        
+        formatter = logging.Formatter("%(asctime)s %(name)s[%(levelname)s] %(message)s")
+        handler1.setFormatter(formatter)
+        handler2.setFormatter(formatter)
+        
+        self.logger.addHandler(handler1)
+        self.logger.addHandler(handler2)
 
 # 定时获取拓扑信息
 # 定时更新link_to_port, access_table_distinct
@@ -112,14 +132,14 @@ class NetworkAwareness(app_manager.RyuApp):
         datapath = ev.msg.datapath
         ofproto = datapath.ofproto
         parser = datapath.ofproto_parser
-        self.logger.info("awareness>>> switch:%s connected", datapath.id)
+        self.logger.info("switch: %s connected", datapath.id)
 
         # install table-miss flow entry
         match = parser.OFPMatch()  # no match
         actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER,
                                           ofproto.OFPCML_NO_BUFFER)]
         self.del_flow(datapath, match)   #delete all flow entries
-        print "awareness>>> add default flow"
+        self.logger.info("add default flow")
         self.add_flow(datapath, 0, match, actions)
 
     def add_flow(self, dp, p, match, actions, idle_timeout=0, hard_timeout=0):
@@ -166,7 +186,6 @@ class NetworkAwareness(app_manager.RyuApp):
         """
             Get Adjacency matrix from link_to_port
         """
-#        print "link_list:", link_list  #cx
         for src in self.switches:
             for dst in self.switches:
                 if src == dst:
@@ -291,32 +310,32 @@ class NetworkAwareness(app_manager.RyuApp):
         """
             Get topology info and calculate shortest paths.
         """
+#        self.logger.debug('get_topology:')
         self.create_port_map(get_switch(self.topology_api_app))
-#        print "self.switch_port_table:%r" % self.switch_port_table
+#        self.logger.debug("self.switch_port_table: %r", self.switch_port_table)
         
         self.switches = self.switch_port_table.keys()
-#        print "self.switches:%r" % self.switches
+#        self.logger.debug("self.switches: %r", self.switches)
         
         self.create_interior_links(get_link(self.topology_api_app))
-#        print "awareness>>> self.link_to_port:%r" % self.link_to_port
-#        print "self.interior_ports:%r" % self.interior_ports
+#        self.logger.debug("self.link_to_port: %r" % self.link_to_port)
+#        self.logger.debug("self.interior_ports:%r" % self.interior_ports)
         
         self.create_access_ports()
-#        print "self.access_ports:%r" % self.access_ports
+#        self.logger.debug("self.access_ports: %r" % self.access_ports)
         
         self.create_access_table()
-#        print "self.access_table:%r" % self.access_table
+#        self.logger.debug("self.access_table: %r" % self.access_table)
         
         setting.write_to_database_access_table_distinct(self.access_table_distinct)
         
         self.get_graph(self.link_to_port.keys())
-#        print "self.graph:%r" % self.graph
 #        nx.draw(self.graph)
 #        plt.show()
 #        plt.savefig("topo.png")
         
         self.shortest_paths = self.all_k_shortest_paths(self.graph, weight='weight', k=CONF.k_paths)  # CONF.k_paths=1
-#        print "self.shortest_paths:%r" % self.shortest_paths  # {1: {1: [[1]], 2: [[1, 2]]}, 2: {1: [[2, 1]], 2: [[2]]}}
+#        self.logger.debug("self.shortest_paths: %r" % self.shortest_paths)  # {1: {1: [[1]], 2: [[1, 2]]}, 2: {1: [[2, 1]], 2: [[2]]}}
         
 #        shortest_path = self.k_shortest_paths(self.graph, 1, 2)
 #        print "shortest_path:%r" % shortest_path  # [[1, 2]]
@@ -363,9 +382,6 @@ class NetworkAwareness(app_manager.RyuApp):
         pkt = packet.Packet(msg.data)
         eth = pkt.get_protocols(ethernet.ethernet)[0]  # pkt.get_protocols(ethernet.ethernet)是个列表，列表里只有一个元素，用[0]直接取出元素
                                                        # 所有的包都有以太网头部，所以能直接get，但是ip等协议需要判断是否存在
-#        print "pkt.get_protocols:", pkt.get_protocols, '\n'
-#        print "pkt.get_protocols(ethernet.ethernet)[0]:", pkt.get_protocols(ethernet.ethernet)[0], '\n'
-
 
         if eth.ethertype == ether_types.ETH_TYPE_LLDP or eth.ethertype == ether_types.ETH_TYPE_IPV6:
             # ignore lldp packet 
@@ -376,7 +392,6 @@ class NetworkAwareness(app_manager.RyuApp):
         
         if dst == ETHERNET_GROUP_MULTICAST:
             # ignore mDNS packet
-#            print "Drop eth_dst == 01:00:5e:00:00:fb"
             return
               
         # 获取access info
@@ -397,8 +412,7 @@ class NetworkAwareness(app_manager.RyuApp):
             mac = src
             # Record the access info
             self.register_access_info(datapath.id, in_port, src_ip, mac)
-#        print "aware>>> self.access_table:%r" % self.access_table
-#        print "self.access_table_distinct:%r" % self.access_table_distinct, '\n'
+#        self.logger.debug("self.access_table_distinct: %r" % self.access_table_distinct)
 
     def show_topology(self):
         switch_num = len(list(self.graph.nodes()))

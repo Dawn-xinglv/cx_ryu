@@ -2,11 +2,13 @@
 
 #   ryu-manager myapp.py --observe-links
 #   ryu-manager myapp.py --log-dir /home/jkw/mininetcx/sfc_ryu --observe-links
-#   ryu-manager myapp.py --log-dir /home/jkw/ryu_sfc/cx_ryu --observe-links
+#   ryu-manager myapp.py --log-dir /home/jkw/ryu_sfc/cx_ryu --log-file ryu.log --observe-links
 
 import sqlite3
 import json
 import copy
+import logging
+import datetime
 from ryu.app.wsgi import ControllerBase, WSGIApplication, route
 from webob import Response
 from ryu.base import app_manager
@@ -61,6 +63,7 @@ class SFCController(ControllerBase):
         # gui
         path = "%s/html/" % PATH
         self.static_app = DirectoryApp(path)
+        sfc_app.logger.info('SFCController Init')
         
 # JUST FOR FUN
 #    @route('hello', '/{greeting}/{name}', methods=['GET'])
@@ -85,10 +88,10 @@ class SFCController(ControllerBase):
         flow_spec = cur.fetchone()
         if not flow_spec: 
             return Response(status = 404)
-        print "flow_spec:",flow_spec #cx
+        sfc_app.logger.debug("flow_spec: %s", flow_spec)
         (sfc_id, sfc_nsh_spi, sfc_nsh_si, ipv4_src, ipv4_dst, sf1_ip, sf2_ip, sf3_ip, sf4_ip, sf5_ip)=flow_spec
         sf_ip = [sf1_ip, sf2_ip, sf3_ip, sf4_ip, sf5_ip, None]    # end with None
-        print "sf_ip:%r" % sf_ip  #cx
+        sfc_app.logger.debug("sf_ip: %r" % sf_ip)
         # get path information
         cur.execute('''select * from sfc_path where sfc_nsh_spi = ?''',(kwargs['sfc_nsh_spi'],))
         path_spec = cur.fetchone()
@@ -96,7 +99,7 @@ class SFCController(ControllerBase):
         for i in path_spec[2:]:   # remove those value = None
             if i != None:
                 sfc_path.append(i)
-        print "sfc_path:",sfc_path
+        sfc_app.logger.info("sfc_path: %r", sfc_path)
         conn.close()
         #---------------close sfc_db.sqlite---------------------------------------
         sf_ip_index = 0
@@ -104,7 +107,7 @@ class SFCController(ControllerBase):
             next_sf_ip = sf_ip[sf_ip_index]
             sf_ip_index += 1
         else:
-            print "No service function was specified!"
+            sfc_app.logger.warning("No service function was specified!")         
             return Response(status = 200)
         # add flow
         # c1:push_mpls--------------------------------------------------------
@@ -112,9 +115,8 @@ class SFCController(ControllerBase):
         next_dpid = sfc_path[1]
         dp = sfc_app.datapaths[dpid]
         priority = 10
-        # ip -> mac -> in_port
-        print "self.mac_to_port:%r\n" % sfc_app.mac_to_port  #cx
-        print "sfc_app.awareness.access_table_distinct:%r\n" % sfc_app.awareness.access_table_distinct  #cx
+        # ip -> mac -> in_por
+#        print "sfc_app.awareness.access_table_distinct:%r\n" % sfc_app.awareness.access_table_distinct  #cx
         for a, b in sfc_app.awareness.access_table_distinct.items():
             dpid_in_dict = a[0]
             port_in_dict = a[1]
@@ -129,7 +131,6 @@ class SFCController(ControllerBase):
                 in_port_for_classifier = d[src_mac1]
                 break
         in_port = in_port_for_classifier 
-#        print "self.link_to_port{}: %r\n" % sfc_app.link_to_port  #cx
         (dpid_out_port, next_dpid_in_port) = sfc_app.link_to_port[(dpid,next_dpid)]
         match = dp.ofproto_parser.OFPMatch(in_port=in_port, eth_type=0x0800, ipv4_src=ipv4_src, ipv4_dst=ipv4_dst) 
         mpls_label = sfc_nsh_spi<<8 | sfc_nsh_si
@@ -267,29 +268,49 @@ class sfc_app (app_manager.RyuApp):
         self.sw_dict = {}          # 记录某个arp包之前有没有见过，不要写入数据库，要定时清空，这样某个主机arp到期之后再次发arp广播也可以获得回复
         self.arp_clean_thread = hub.spawn(self._arp_clean)
         
-        timer = threading.Timer(3, self.fun_timer)
-        timer.start()
-        # arp_proxy ----------------------------------------------------------
-        
         # read database-------------------------------------------------------
         self.mac_to_port = setting.read_from_database_mac_to_port()
-#        print 'self.mac_to_port:', self.mac_to_port
+        self.logger.debug('self.mac_to_port: %r', self.mac_to_port)
         self.link_to_port = setting.read_from_database_link_to_port()
-#        print 'myapp>>> self.link_to_port:', self.link_to_port
+        self.logger.debug('self.link_to_port: %r', self.link_to_port)
 #        self.pre_path = setting.read_from_database_pre_path()   # 不要保存上次的pre_path，保证第一次最短路径流表一定可以下发
 #        print 'myapp>>> self.pre_path:', self.pre_path
         self.arp_table = setting.read_from_database_arp_table()
-#        print 'myapp>>> self.arp_table:', self.arp_table
+        self.logger.debug('self.arp_table: %r', self.arp_table)
 
-        # read database-------------------------------------------------------
-       
+        # log configuration-----
+        self.logger = logging.getLogger(self.__class__.__name__)
+        self.logger.propagate = False   # 隔离父logger
+        # filename:设置日志输出文件，以天为单位输出到不同的日志文件，以免单个日志文件日志信息过多，
+        # 日志文件如果不存在则会自动创建，但前面的路径如log文件夹必须存在，否则会报错
+        log_file = 'log/sys_%s.log' % datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d')
+        handler1 = logging.StreamHandler()                  # console
+        handler2 = logging.FileHandler(filename=log_file)   # log file
+        
+        self.logger.setLevel(logging.DEBUG)
+        handler1.setLevel(logging.INFO)  # level 20
+        handler2.setLevel(logging.DEBUG) # level 10
+        
+        formatter = logging.Formatter("%(asctime)s %(name)s[%(levelname)s] %(message)s")
+        handler1.setFormatter(formatter)
+        handler2.setFormatter(formatter)
+        
+        self.logger.addHandler(handler1)
+        self.logger.addHandler(handler2)
+
+        self.logger.debug('\n'*5)
+        # start timer-----
+        timer = threading.Timer(3, self.fun_timer)
+        timer.start()
+        
+        
 # 定时更新所有mac_to_port
     def fun_timer(self): 
         try:
             self.update_mac_to_port_all()
-            print 'myapp>>> update all mac_to_port'
+            self.logger.info('update all mac_to_port')
         except:
-            print 'Error: update_mac_to_port_all failed'
+            self.logger.error('update_mac_to_port_all failed')
             pass
         global timer
         timer = threading.Timer(60, self.fun_timer)
@@ -341,16 +362,13 @@ class sfc_app (app_manager.RyuApp):
 #            datapath.id = hex(datapath.id)  # int -> hexadecimal string
         if ev.state == MAIN_DISPATCHER:
             if not datapath.id in self.datapaths:
-                self.logger.debug('register datapath: %r', datapath.id)
+                self.logger.debug("register datapath: %r", datapath.id)
                 self.datapaths[datapath.id] = datapath
-#                print "myapp>>> datapath %r connected" % datapath.id
         elif ev.state == DEAD_DISPATCHER:
             if datapath.id in self.datapaths:
                 self.logger.debug('unregister datapath: %r', datapath.id)
                 del self.datapaths[datapath.id]
-                print "myapp>>> datapath %r left" % datapath.id
-#        print "self.datapaths:%r\n" % self.datapaths
-
+                self.logger.error("datapath %r left", datapath.id)
                 
                 
 # Packet_IN handler
@@ -397,7 +415,7 @@ class sfc_app (app_manager.RyuApp):
             return
         if eth.ethertype == ether_types.ETH_TYPE_IP and dst == ETHERNET_MULTICAST:  # DHCP广播包, IP=0x0800
             # drop DHCP packet
-#            print "Drop ip_type and eth_dst == ff:ff:ff:ff:ff:ff"
+            self.logger.debug("Drop ip_type and eth_dst == ff:ff:ff:ff:ff:ff")
             out = datapath.ofproto_parser.OFPPacketOut(            
                     datapath=datapath,                                 
                     buffer_id=datapath.ofproto.OFP_NO_BUFFER,           
@@ -406,7 +424,7 @@ class sfc_app (app_manager.RyuApp):
             datapath.send_msg(out)               
             return
             
-        print "\npkt.get_protocols:", pkt.get_protocols, '\n'
+#        self.logger.debug("\npkt.get_protocols: %s", pkt.get_protocols)
         
         header_list = dict( (p.protocol_name, p)for p in pkt.protocols if type(p) != str)
 #        print "header_list:", header_list
@@ -414,7 +432,7 @@ class sfc_app (app_manager.RyuApp):
             ipv4_packet = pkt.get_protocols(ipv4.ipv4)[0]
 #            print "pkt.get_protocols(ipv4.ipv4)[0]:", pkt.get_protocols(ipv4.ipv4)[0], '\n'
             if ipv4_packet.src == "0.0.0.0" or ipv4_packet.dst == "255.255.255.255":    # DHCP广播包
-                print "Drop ip_src == 0.0.0.0 or ip_dst == 255.255.255.255"  
+                self.logger.debug("Drop ip_src == 0.0.0.0 or ip_dst == 255.255.255.255")  
                 out = datapath.ofproto_parser.OFPPacketOut(            
                     datapath=datapath,                                 
                     buffer_id=datapath.ofproto.OFP_NO_BUFFER,           
@@ -423,6 +441,9 @@ class sfc_app (app_manager.RyuApp):
                 datapath.send_msg(out)  
                 return
         # 包过滤结束
+        print ''  # new line
+        self.logger.info('New packet in...')
+        self.logger.debug("pkt.get_protocols: %s", pkt.get_protocols)
         '''
             如果源主机已知目的主机的mac地址，而控制器不知道（比如人为清空数据库再重启控制器），
             那么这个ip包就计算不出最短路径，然后就会泛洪输出。
@@ -442,15 +463,15 @@ class sfc_app (app_manager.RyuApp):
                     in_port=in_port,
                     actions=[], data=None)
                 datapath.send_msg(out)  
-                print 'Dpid:%s Drop dup ipv4 packet' % dpid
+                self.logger.info('Dpid:%s Drop dup ipv4 packet', dpid)
                 return
             else:
                 self.pre_ipv4_packet_identification[dpid] = ipv4_packet.identification
-                print 'self.pre_ipv4_packet_identification:', self.pre_ipv4_packet_identification
+                self.logger.debug('new self.pre_ipv4_packet_identification: %s', self.pre_ipv4_packet_identification)
         
         
         self.mac_to_port.setdefault(dpid, {})  #每一个dpid的值都是一个字典
-        self.logger.info("myapp>>> packet in dpid:%s src:%s dst:%s in_port:%s", dpid, src, dst, in_port)
+        self.logger.info("packet in dpid:%s src:%s dst:%s in_port:%s" % (dpid, src, dst, in_port))
         # learn a mac address
         self.mac_to_port[dpid][src] = in_port
         setting.write_to_database_mac_to_port(self.mac_to_port)
@@ -466,7 +487,7 @@ class sfc_app (app_manager.RyuApp):
             # update mac_to_port
             if result == True:  # shortest path is successful
                 self.update_mac_to_port(src, dst, ip_pkt.src, ip_pkt.dst, self.pre_path)
-                print 'ipv4: update_mac_to_port'
+                self.logger.info('ipv4: update_mac_to_port')
                 
         '''
             arp包：先记录源ip和mac信息，然后交给arp_handler处理
@@ -488,7 +509,7 @@ class sfc_app (app_manager.RyuApp):
                 # update mac_to_port
                 if result == True:  # shortest path is successful
                     self.update_mac_to_port(src, dst, arp_pkt.src_ip, arp_pkt.dst_ip, self.pre_path)
-                    print 'arp: update_mac_to_port'
+                    self.logger.info('arp: update_mac_to_port')
             else:
                 out_port = ofproto.OFPP_FLOOD
         '''
@@ -507,8 +528,8 @@ class sfc_app (app_manager.RyuApp):
         if out_port != ofproto.OFPP_FLOOD:
             match = parser.OFPMatch(eth_dst=dst)  # 去掉eth_src,in_port
             self.add_flow(datapath, 1, match, actions, table_id=0, inst_flag=ACTIONS, idle_timeout=10, hard_timeout=15 )
-#            print "dpid:%r,src:%r,dst:%r,in_port:%r,out_port:%r\n" % (dpid, src, dst, in_port, out_port)
-            print 'Add temp flow'
+            self.logger.info('Add temp flow')
+            self.logger.debug("dpid:%r,src:%r,dst:%r,in_port:%r,out_port:%r", dpid, src, dst, in_port, out_port)
             
         #检查buffer_id，如果有dpid缓存就发空data，如果没有dpid缓存就发msg.data
         data = None
@@ -522,7 +543,7 @@ class sfc_app (app_manager.RyuApp):
 #        if eth.ethertype == ether_types.ETH_TYPE_IP:
 #            ip_pkt = pkt.get_protocol(ipv4.ipv4)
 #            self.shortest_forwarding(msg, eth.ethertype, ip_pkt.src, ip_pkt.dst)
-        
+#        self.logger.info('The end of packet_in_handler\n')
                 
 # Function definitions 
 
@@ -790,9 +811,9 @@ class sfc_app (app_manager.RyuApp):
             if src_sw and dst_sw:
                 # Path has already calculated, just get it.
                 path = self.get_path(src_sw, dst_sw, weight=self.weight)
-#                print "src_sw:%r, dst_sw:%r" % (src_sw, dst_sw)  #cx
-#                print "pre_path:", self.pre_path
-#                print "path:", path
+                self.logger.debug("src_sw:%r, dst_sw:%r" % (src_sw, dst_sw))
+                self.logger.debug("pre_path: %r", self.pre_path)
+                self.logger.debug("path: %r", path)
                 if path != self.pre_path:
                     self.logger.info("dijkstra_path>>> PATH[%s --> %s]: %s" % (ip_src, ip_dst, path))
                     self.pre_path = path
@@ -807,7 +828,7 @@ class sfc_app (app_manager.RyuApp):
                                       flow_info, msg.buffer_id, msg.data)
             return True  # successful
         else:   # not found host information
-            print 'Host information is not found'
+            self.logger.info('Host information is not found')
             return False # failure
             
             
@@ -914,7 +935,7 @@ class sfc_app (app_manager.RyuApp):
         access_table_distinct_items.sort()
 #        print 'access_table_distinct_items:', access_table_distinct_items  # access_table_distinct_items: [(u'192.168.20.21', u'00:00:00:00:00:01'), (u'192.168.20.51', u'00:00:00:00:00:09'), (u'192.168.20.22', u'00:00:00:00:00:02'), (u'192.168.20.41', u'00:00:00:00:00:06'), (u'192.168.20.31', u'00:00:00:00:00:03'), (u'192.168.20.42', u'00:00:00:00:00:07'), (u'192.168.20.33', u'00:00:00:00:00:05'), (u'192.168.20.43', u'00:00:00:00:00:08'), (u'192.168.20.32', u'00:00:00:00:00:04')]        
         length = len(access_table_distinct_items)  
-#        print 'length:', length
+        self.logger.debug('access_table_distinct_items length: %s', length)
         
         count = 0
         if length > 1:
@@ -934,10 +955,10 @@ class sfc_app (app_manager.RyuApp):
                             path = self.get_path(src_sw, dst_sw, weight=self.weight)
                             self.update_mac_to_port(src_mac, dst_mac, src_ip, dst_ip, path)
                     else:
-                        print 'Not found switch'
-#            print 'count:', count
+                        self.logger.info('Not found switch')
+            self.logger.debug('update_mac_to_port_all count: %s', count)
         else:
-            print "Don't need to update mac_to_port"
+            self.logger.info("Don't need to update mac_to_port")
           
         
     # arp_proxy --------------------------------------------------------------
@@ -960,7 +981,6 @@ class sfc_app (app_manager.RyuApp):
         对于这样的包，直接丢弃，然后在packet_in中返回
         '''
         arp_eth_dst = header_list[ARP].dst_mac
-#        print "arp_eth_dst:", arp_eth_dst
         if arp_eth_dst == ETHERNET_ZERO and eth_dst != ETHERNET_MULTICAST:
             out = datapath.ofproto_parser.OFPPacketOut(             
                     datapath=datapath,
@@ -968,7 +988,7 @@ class sfc_app (app_manager.RyuApp):
                     in_port=in_port,
                     actions=[], data=None)
             datapath.send_msg(out)
-            print 'ARP_PROXY: Drop arp request unicast'
+            self.logger.info('ARP_PROXY: Drop arp request unicast')
             return 1  # drop
         # drop arp request unicast------
 
@@ -983,12 +1003,11 @@ class sfc_app (app_manager.RyuApp):
                     in_port=in_port,
                     actions=[], data=None)
                 datapath.send_msg(out)
-                print "ARP_PROXY: Drop arp broadcast"
+                self.logger.info("ARP_PROXY: Drop arp broadcast")
                 return 1   # drop
             else:  # 该交换机第一次见这个广播包，记录in_port
                 self.sw_dict[(datapath.id, eth_src, arp_dst_ip)] = in_port
-                print 'self.sw_dict:', self.sw_dict
-#                self.sw_list.append((datapath.id, eth_src, arp_dst_ip))
+                self.logger.info('First see the broadcast packet. self.sw_dict: %r', self.sw_dict)
 
         if ARP in header_list:  # arp
 #            hwtype = header_list[ARP].hwtype
@@ -1026,13 +1045,13 @@ class sfc_app (app_manager.RyuApp):
                         in_port=datapath.ofproto.OFPP_CONTROLLER,
                         actions=actions, data=ARP_Reply.data)
                     datapath.send_msg(out)
-                    print "ARP_PROXY: Arp reply"
+                    self.logger.info("ARP_PROXY: Arp reply")
                     return 1  # arp_reply
             else:
-                print "ARP_PROXY: Normal arp reply or other arp packet"
+                self.logger.info("ARP_PROXY: Normal arp reply or other arp packet")
                 return 2  # other arp packet
  
-        print 'ARP_PROXY: Arp flood'
+        self.logger.info('ARP_PROXY: Arp flood')
         return 0
     # arp_proxy --------------------------------------------------------------
                                   

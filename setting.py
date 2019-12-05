@@ -1,7 +1,8 @@
 # coding=utf-8
 
 import sqlite3
-
+import logging
+import datetime
 
 # Common Setting for Network awareness module.
 DISCOVERY_PERIOD = 10   			# For discovering topology.
@@ -11,6 +12,27 @@ TOSHOW = True					# For showing information in terminal
 MAX_CAPACITY = 281474976710655L		# Max capacity of link
 
 
+# log configuration-----
+logger = logging.getLogger('setting')
+logger.propagate = False   # 隔离父logger 
+# filename:设置日志输出文件，以天为单位输出到不同的日志文件，以免单个日志文件日志信息过多，
+# 日志文件如果不存在则会自动创建，但前面的路径如log文件夹必须存在，否则会报错
+log_file = 'log/sys_%s.log' % datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d')
+handler1 = logging.StreamHandler()                  # console
+handler2 = logging.FileHandler(filename=log_file)   # log file
+
+logger.setLevel(logging.DEBUG)
+handler1.setLevel(logging.INFO)  # level 20
+handler2.setLevel(logging.DEBUG) # level 10
+
+formatter = logging.Formatter("%(asctime)s %(name)s[%(levelname)s] %(message)s")
+handler1.setFormatter(formatter)
+handler2.setFormatter(formatter)
+
+logger.addHandler(handler1)
+logger.addHandler(handler2)
+        
+        
 # database function
 def write_to_database_mac_to_port(data):
     conn = sqlite3.connect('sfc_db.sqlite')   # open database
@@ -36,7 +58,7 @@ def write_to_database_mac_to_port(data):
             row = []   # clean   
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()     # close database
-    print 'write to database <mac_to_port> table successfully'
+    logger.debug('write to database <mac_to_port> table successfully')
 
 def read_from_database_mac_to_port():
     conn = sqlite3.connect('sfc_db.sqlite')   # open database
@@ -53,7 +75,7 @@ def read_from_database_mac_to_port():
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
-    print 'read from database <mac_to_port> table successfully'
+    logger.debug('read from database <mac_to_port> table successfully')
     return mac_to_port
     
 def write_to_database_link_to_port(data):
@@ -87,7 +109,7 @@ def write_to_database_link_to_port(data):
         row = []   # clean    
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
-    print 'write to database <link_to_port> table successfully'
+    logger.debug('write to database <link_to_port> table successfully')
     
 def read_from_database_link_to_port():
     conn = sqlite3.connect('sfc_db.sqlite')   # open database
@@ -108,7 +130,7 @@ def read_from_database_link_to_port():
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
-    print 'read from database <link_to_port> table successfully'
+    logger.debug('read from database <link_to_port> table successfully')
     return link_to_port
     
   
@@ -133,7 +155,7 @@ def write_to_database_pre_path(data):
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
-    print 'write to database <pre_path> table successfully'
+    logger.debug('write to database <pre_path> table successfully')
     
     
 #def read_from_database_pre_path():
@@ -178,7 +200,7 @@ def write_to_database_arp_table(data):
                 cur.execute('''update arp_table set mac=?, time=datetime('now','localtime') where id=? ''', (row[1],row_exist[0]))
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
-    print 'write to database <arp_table> table successfully'
+    logger.debug('write to database <arp_table> table successfully')
     
     
 def read_from_database_arp_table():
@@ -197,7 +219,7 @@ def read_from_database_arp_table():
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
-    print 'read from database <arp_table> table successfully'
+    logger.debug('read from database <arp_table> table successfully')
     return arp_table
     
     
@@ -233,7 +255,7 @@ def write_to_database_access_table_distinct(data):
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
-    print 'write to database <access_table_distinct> table successfully'
+    logger.debug('write to database <access_table_distinct> table successfully')
     
     
 def read_from_database_access_table_distinct():
@@ -255,7 +277,7 @@ def read_from_database_access_table_distinct():
     
     conn.commit()    #提交，如果不提交，关闭连接后所有更改都会丢失
     conn.close()
-    print 'read from database <access_table_distinct> table successfully'
+    logger.debug('read from database <access_table_distinct> table successfully')
     return access_table_distinct
     
     

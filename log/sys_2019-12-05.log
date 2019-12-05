@@ -1,0 +1,910 @@
+2019-12-05 13:52:33,669 sfc_app[DEBUG]
+
+
+
+
+
+2019-12-05 13:52:34,627 sfc_app[DEBUG]register datapath: 7
+2019-12-05 13:52:34,677 sfc_app[DEBUG]register datapath: 6
+2019-12-05 13:52:34,677 sfc_app[DEBUG]register datapath: 5
+2019-12-05 13:52:34,678 sfc_app[DEBUG]register datapath: 4
+2019-12-05 13:52:34,678 sfc_app[DEBUG]register datapath: 2
+2019-12-05 13:52:34,735 sfc_app[DEBUG]register datapath: 3
+2019-12-05 13:54:58,377 sfc_app[DEBUG]
+
+
+
+
+
+2019-12-05 13:54:59,574 NetworkAwareness[INFO]awareness>>> switch:7 connected
+2019-12-05 13:54:59,580 NetworkAwareness[INFO]awareness>>> switch:6 connected
+2019-12-05 13:54:59,580 NetworkAwareness[INFO]awareness>>> switch:4 connected
+2019-12-05 13:54:59,581 NetworkAwareness[INFO]awareness>>> switch:2 connected
+2019-12-05 13:54:59,582 NetworkAwareness[INFO]awareness>>> switch:3 connected
+2019-12-05 13:54:59,582 NetworkAwareness[INFO]awareness>>> switch:5 connected
+2019-12-05 13:54:59,586 sfc_app[DEBUG]register datapath: 7
+2019-12-05 13:54:59,612 sfc_app[DEBUG]register datapath: 3
+2019-12-05 13:54:59,612 sfc_app[DEBUG]register datapath: 2
+2019-12-05 13:54:59,613 sfc_app[DEBUG]register datapath: 6
+2019-12-05 13:54:59,613 sfc_app[DEBUG]register datapath: 4
+2019-12-05 13:54:59,658 sfc_app[DEBUG]register datapath: 5
+2019-12-05 14:53:09,780 sfc_app[DEBUG] MainProcess MainThread 
+
+
+
+
+
+2019-12-05 14:53:10,736 NetworkAwareness[INFO] MainProcess GreenThread-2 awareness>>> switch:7 connected
+2019-12-05 14:53:10,741 NetworkAwareness[INFO] MainProcess GreenThread-2 awareness>>> switch:6 connected
+2019-12-05 14:53:10,742 NetworkAwareness[INFO] MainProcess GreenThread-2 awareness>>> switch:4 connected
+2019-12-05 14:53:10,743 NetworkAwareness[INFO] MainProcess GreenThread-2 awareness>>> switch:2 connected
+2019-12-05 14:53:10,743 NetworkAwareness[INFO] MainProcess GreenThread-2 awareness>>> switch:3 connected
+2019-12-05 14:53:10,744 NetworkAwareness[INFO] MainProcess GreenThread-2 awareness>>> switch:5 connected
+2019-12-05 14:53:10,746 sfc_app[DEBUG] MainProcess GreenThread-3 register datapath: 7
+2019-12-05 14:53:10,770 sfc_app[DEBUG] MainProcess GreenThread-3 register datapath: 5
+2019-12-05 14:53:10,770 sfc_app[DEBUG] MainProcess GreenThread-3 register datapath: 3
+2019-12-05 14:53:10,771 sfc_app[DEBUG] MainProcess GreenThread-3 register datapath: 2
+2019-12-05 14:53:10,771 sfc_app[DEBUG] MainProcess GreenThread-3 register datapath: 6
+2019-12-05 14:53:10,771 sfc_app[DEBUG] MainProcess GreenThread-3 register datapath: 4
+2019-12-05 15:36:42,750 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 15:36:43,637 NetworkAwareness[INFO] awareness>>> switch:7 connected
+2019-12-05 15:36:43,641 NetworkAwareness[INFO] awareness>>> switch:6 connected
+2019-12-05 15:36:43,642 NetworkAwareness[INFO] awareness>>> switch:4 connected
+2019-12-05 15:36:43,642 NetworkAwareness[INFO] awareness>>> switch:2 connected
+2019-12-05 15:36:43,643 NetworkAwareness[INFO] awareness>>> switch:3 connected
+2019-12-05 15:36:43,643 NetworkAwareness[INFO] awareness>>> switch:5 connected
+2019-12-05 15:36:43,646 sfc_app[DEBUG] register datapath: 7
+2019-12-05 15:36:43,672 sfc_app[DEBUG] register datapath: 3
+2019-12-05 15:36:43,672 sfc_app[DEBUG] register datapath: 2
+2019-12-05 15:36:43,673 sfc_app[DEBUG] register datapath: 6
+2019-12-05 15:36:43,673 sfc_app[DEBUG] register datapath: 4
+2019-12-05 15:36:43,716 sfc_app[DEBUG] register datapath: 5
+2019-12-05 15:36:45,755 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:37:22,287 sfc_app[DEBUG] unregister datapath: 7
+2019-12-05 15:37:22,287 sfc_app[ERROR] datapath 7 left
+2019-12-05 15:37:22,748 NetworkAwareness[INFO] awareness>>> switch:7 connected
+2019-12-05 15:37:22,753 sfc_app[DEBUG] register datapath: 7
+2019-12-05 15:40:03,456 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 15:40:04,119 NetworkAwareness[INFO] awareness>>> switch:7 connected
+2019-12-05 15:40:04,122 NetworkAwareness[INFO] awareness>>> switch:6 connected
+2019-12-05 15:40:04,122 NetworkAwareness[INFO] awareness>>> switch:5 connected
+2019-12-05 15:40:04,123 NetworkAwareness[INFO] awareness>>> switch:4 connected
+2019-12-05 15:40:04,123 NetworkAwareness[INFO] awareness>>> switch:3 connected
+2019-12-05 15:40:04,124 NetworkAwareness[INFO] awareness>>> switch:2 connected
+2019-12-05 15:40:04,134 sfc_app[DEBUG] register datapath: 6
+2019-12-05 15:40:04,134 sfc_app[DEBUG] register datapath: 5
+2019-12-05 15:40:04,134 sfc_app[DEBUG] register datapath: 4
+2019-12-05 15:40:04,135 sfc_app[DEBUG] register datapath: 7
+2019-12-05 15:40:04,135 sfc_app[DEBUG] register datapath: 3
+2019-12-05 15:40:04,192 sfc_app[DEBUG] register datapath: 2
+2019-12-05 15:40:06,459 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:40:16,750 sfc_app[INFO] self.pre_ipv4_packet_identification:
+2019-12-05 15:40:16,750 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:00:00:00:00:00:09 in_port:4
+2019-12-05 15:40:16,752 sfc_app[INFO] dijkstra_path>>> PATH[192.168.20.42 --> 192.168.20.51]: [4, 6, 5]
+2019-12-05 15:40:16,755 sfc_app[DEBUG] inter_link flow install
+2019-12-05 15:40:16,763 sfc_app[INFO] self.pre_ipv4_packet_identification:
+2019-12-05 15:40:16,763 sfc_app[INFO] packet in dpid:5 src:00:00:00:00:00:07 dst:00:00:00:00:00:09 in_port:1
+2019-12-05 15:40:16,768 sfc_app[INFO] Dpid:5 Drop dup ipv4 packet
+2019-12-05 15:40:16,777 sfc_app[INFO] packet in dpid:5 src:00:00:00:00:00:09 dst:ff:ff:ff:ff:ff:ff in_port:3
+2019-12-05 15:41:56,236 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 15:41:56,979 NetworkAwareness[INFO] awareness>>> switch:7 connected
+2019-12-05 15:41:56,982 NetworkAwareness[INFO] awareness>>> switch:6 connected
+2019-12-05 15:41:56,982 NetworkAwareness[INFO] awareness>>> switch:5 connected
+2019-12-05 15:41:56,983 NetworkAwareness[INFO] awareness>>> switch:4 connected
+2019-12-05 15:41:56,984 NetworkAwareness[INFO] awareness>>> switch:3 connected
+2019-12-05 15:41:56,984 NetworkAwareness[INFO] awareness>>> switch:2 connected
+2019-12-05 15:41:56,993 sfc_app[DEBUG] register datapath: 6
+2019-12-05 15:41:56,994 sfc_app[DEBUG] register datapath: 5
+2019-12-05 15:41:56,994 sfc_app[DEBUG] register datapath: 4
+2019-12-05 15:41:56,994 sfc_app[DEBUG] register datapath: 7
+2019-12-05 15:41:56,995 sfc_app[DEBUG] register datapath: 3
+2019-12-05 15:41:57,054 sfc_app[DEBUG] register datapath: 2
+2019-12-05 15:41:59,240 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:42:02,811 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:09',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=54762,dst='192.168.20.51',flags=2,header_length=5,identification=47888,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=43553,data=echo(data='\xca\xb4\xe8]\x00\x00\x00\x00\xcfP\x0c\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=167,seq=1),type=8)>
+2019-12-05 15:42:02,813 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 47888}
+2019-12-05 15:42:02,813 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:00:00:00:00:00:09 in_port:4
+2019-12-05 15:42:02,815 sfc_app[INFO] dijkstra_path>>> PATH[192.168.20.42 --> 192.168.20.51]: [4, 6, 5]
+2019-12-05 15:42:02,819 sfc_app[DEBUG] inter_link flow install
+2019-12-05 15:42:02,825 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:09',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=54762,dst='192.168.20.51',flags=2,header_length=5,identification=47888,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=43553,data=echo(data='\xca\xb4\xe8]\x00\x00\x00\x00\xcfP\x0c\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=167,seq=1),type=8)>
+2019-12-05 15:42:02,827 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 47888, 6: 47888}
+2019-12-05 15:42:02,827 sfc_app[INFO] packet in dpid:6 src:00:00:00:00:00:07 dst:00:00:00:00:00:09 in_port:3
+2019-12-05 15:42:02,834 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:09',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=54762,dst='192.168.20.51',flags=2,header_length=5,identification=47888,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=43553,data=echo(data='\xca\xb4\xe8]\x00\x00\x00\x00\xcfP\x0c\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=167,seq=1),type=8)>
+2019-12-05 15:42:02,835 sfc_app[INFO] Dpid:6 Drop dup ipv4 packet
+2019-12-05 15:42:08,061 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:09'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.51',src_mac='00:00:00:00:00:09')>
+2019-12-05 15:42:08,062 sfc_app[INFO] packet in dpid:5 src:00:00:00:00:00:09 dst:00:00:00:00:00:07 in_port:3
+2019-12-05 15:42:09,083 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:09'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.51',src_mac='00:00:00:00:00:09')>
+2019-12-05 15:42:09,085 sfc_app[INFO] packet in dpid:5 src:00:00:00:00:00:09 dst:00:00:00:00:00:07 in_port:3
+2019-12-05 15:42:10,106 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:09'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.51',src_mac='00:00:00:00:00:09')>
+2019-12-05 15:42:10,107 sfc_app[INFO] packet in dpid:5 src:00:00:00:00:00:09 dst:00:00:00:00:00:07 in_port:3
+2019-12-05 15:42:59,242 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:43:21,361 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=33207,dst='192.168.20.33',flags=2,header_length=5,identification=3926,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=25594,data=echo(data='\x19\xb5\xe8]\x00\x00\x00\x00\xcdv\x05\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=168,seq=1),type=8)>
+2019-12-05 15:43:21,362 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 3926, 6: 47888}
+2019-12-05 15:43:21,362 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:4
+2019-12-05 15:43:21,365 sfc_app[INFO] dijkstra_path>>> PATH[192.168.20.42 --> 192.168.20.33]: [4, 6, 3]
+2019-12-05 15:43:21,375 sfc_app[DEBUG] inter_link flow install
+2019-12-05 15:43:21,384 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=33207,dst='192.168.20.33',flags=2,header_length=5,identification=3926,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=25594,data=echo(data='\x19\xb5\xe8]\x00\x00\x00\x00\xcdv\x05\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=168,seq=1),type=8)>
+2019-12-05 15:43:21,387 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 3926, 6: 3926}
+2019-12-05 15:43:21,388 sfc_app[INFO] packet in dpid:6 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:3
+2019-12-05 15:43:21,390 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=33207,dst='192.168.20.33',flags=2,header_length=5,identification=3926,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=25594,data=echo(data='\x19\xb5\xe8]\x00\x00\x00\x00\xcdv\x05\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=168,seq=1),type=8)>
+2019-12-05 15:43:21,391 sfc_app[INFO] Dpid:6 Drop dup ipv4 packet
+2019-12-05 15:43:26,519 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 15:43:26,520 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 15:43:27,541 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 15:43:27,542 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 15:43:28,566 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 15:43:28,567 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 15:43:59,245 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:49:56,467 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 15:49:56,847 NetworkAwareness[INFO] awareness>>> switch:7 connected
+2019-12-05 15:49:56,851 NetworkAwareness[INFO] awareness>>> switch:6 connected
+2019-12-05 15:49:56,852 NetworkAwareness[INFO] awareness>>> switch:5 connected
+2019-12-05 15:49:56,852 NetworkAwareness[INFO] awareness>>> switch:4 connected
+2019-12-05 15:49:56,853 NetworkAwareness[INFO] awareness>>> switch:3 connected
+2019-12-05 15:49:56,854 NetworkAwareness[INFO] awareness>>> switch:2 connected
+2019-12-05 15:49:56,865 sfc_app[DEBUG] register datapath: 6
+2019-12-05 15:49:56,865 sfc_app[DEBUG] register datapath: 5
+2019-12-05 15:49:56,865 sfc_app[DEBUG] register datapath: 4
+2019-12-05 15:49:56,866 sfc_app[DEBUG] register datapath: 7
+2019-12-05 15:49:56,866 sfc_app[DEBUG] register datapath: 3
+2019-12-05 15:49:56,932 sfc_app[DEBUG] register datapath: 2
+2019-12-05 15:49:59,471 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:50:12,050 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=20343,dst='192.168.20.33',flags=2,header_length=5,identification=16790,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=62900,data=echo(data='\xb4\xb6\xe8]\x00\x00\x00\x00\xa5\xb9\x00\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=169,seq=1),type=8)>
+2019-12-05 15:50:12,053 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 16790}
+2019-12-05 15:50:13,059 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=20209,dst='192.168.20.33',flags=2,header_length=5,identification=16924,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=56204,data=echo(data='\xb5\xb6\xe8]\x00\x00\x00\x00\xbe\xe0\x00\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=169,seq=2),type=8)>
+2019-12-05 15:50:13,060 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 16924}
+2019-12-05 15:50:14,083 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=20130,dst='192.168.20.33',flags=2,header_length=5,identification=17003,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=53806,data=echo(data='\xb6\xb6\xe8]\x00\x00\x00\x00\xc6=\x01\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=169,seq=3),type=8)>
+2019-12-05 15:50:14,084 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 17003}
+2019-12-05 15:50:17,224 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2054,src='00:00:00:00:00:07'), arp(dst_ip='192.168.20.33',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.42',src_mac='00:00:00:00:00:07')>
+2019-12-05 15:50:18,243 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2054,src='00:00:00:00:00:07'), arp(dst_ip='192.168.20.33',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.42',src_mac='00:00:00:00:00:07')>
+2019-12-05 15:50:19,267 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2054,src='00:00:00:00:00:07'), arp(dst_ip='192.168.20.33',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.42',src_mac='00:00:00:00:00:07')>
+2019-12-05 15:50:24,334 sfc_app[DEBUG] unregister datapath: 4
+2019-12-05 15:50:24,335 sfc_app[ERROR] datapath 4 left
+2019-12-05 15:50:24,443 NetworkAwareness[INFO] awareness>>> switch:4 connected
+2019-12-05 15:50:24,448 sfc_app[DEBUG] register datapath: 4
+2019-12-05 15:50:26,053 sfc_app[DEBUG] unregister datapath: 6
+2019-12-05 15:50:26,053 sfc_app[ERROR] datapath 6 left
+2019-12-05 15:50:26,510 NetworkAwareness[INFO] awareness>>> switch:6 connected
+2019-12-05 15:50:26,514 sfc_app[DEBUG] register datapath: 6
+2019-12-05 15:51:08,899 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 15:51:10,118 NetworkAwareness[INFO] awareness>>> switch:7 connected
+2019-12-05 15:51:10,125 NetworkAwareness[INFO] awareness>>> switch:4 connected
+2019-12-05 15:51:10,126 NetworkAwareness[INFO] awareness>>> switch:6 connected
+2019-12-05 15:51:10,126 NetworkAwareness[INFO] awareness>>> switch:3 connected
+2019-12-05 15:51:10,127 NetworkAwareness[INFO] awareness>>> switch:2 connected
+2019-12-05 15:51:10,127 NetworkAwareness[INFO] awareness>>> switch:5 connected
+2019-12-05 15:51:10,130 sfc_app[DEBUG] register datapath: 7
+2019-12-05 15:51:10,170 sfc_app[DEBUG] register datapath: 6
+2019-12-05 15:51:10,171 sfc_app[DEBUG] register datapath: 5
+2019-12-05 15:51:10,171 sfc_app[DEBUG] register datapath: 4
+2019-12-05 15:51:10,171 sfc_app[DEBUG] register datapath: 3
+2019-12-05 15:51:10,171 sfc_app[DEBUG] register datapath: 2
+2019-12-05 15:51:11,904 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:51:15,397 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='ff:ff:ff:ff:ff:ff',ethertype=2054,src='00:00:00:00:00:07'), arp(dst_ip='192.168.20.33',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.42',src_mac='00:00:00:00:00:07')>
+2019-12-05 15:51:15,399 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:ff:ff:ff:ff:ff:ff in_port:4
+2019-12-05 15:51:15,410 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=6100,dst='192.168.20.33',flags=2,header_length=5,identification=31033,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=46965,data=echo(data='\xf3\xb6\xe8]\x00\x00\x00\x00\x9f\xf7\x05\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=170,seq=1),type=8)>
+2019-12-05 15:51:15,412 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 31033}
+2019-12-05 15:51:15,412 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:4
+2019-12-05 15:51:15,418 sfc_app[INFO] dijkstra_path>>> PATH[192.168.20.42 --> 192.168.20.33]: [4, 6, 3]
+2019-12-05 15:51:15,424 sfc_app[DEBUG] inter_link flow install
+2019-12-05 15:51:15,425 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 15:51:15,426 sfc_app[INFO] Add temp flow
+2019-12-05 15:51:15,426 sfc_app[DEBUG] dpid:4,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:05',in_port:4,out_port:1
+2019-12-05 15:51:15,438 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=6100,dst='192.168.20.33',flags=2,header_length=5,identification=31033,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=46965,data=echo(data='\xf3\xb6\xe8]\x00\x00\x00\x00\x9f\xf7\x05\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=170,seq=1),type=8)>
+2019-12-05 15:51:15,441 sfc_app[INFO] self.pre_ipv4_packet_identification: {4: 31033, 6: 31033}
+2019-12-05 15:51:15,442 sfc_app[INFO] packet in dpid:6 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:3
+2019-12-05 15:51:15,446 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 15:51:15,448 sfc_app[INFO] Add temp flow
+2019-12-05 15:51:15,449 sfc_app[DEBUG] dpid:6,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:05',in_port:3,out_port:2
+2019-12-05 15:51:15,449 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=6100,dst='192.168.20.33',flags=2,header_length=5,identification=31033,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=46965,data=echo(data='\xf3\xb6\xe8]\x00\x00\x00\x00\x9f\xf7\x05\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=170,seq=1),type=8)>
+2019-12-05 15:51:15,452 sfc_app[INFO] Dpid:6 Drop dup ipv4 packet
+2019-12-05 15:51:15,460 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='ff:ff:ff:ff:ff:ff',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 15:51:15,461 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:ff:ff:ff:ff:ff:ff in_port:5
+2019-12-05 15:52:11,908 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:53:11,912 sfc_app[INFO] update all mac_to_port
+2019-12-05 15:54:11,915 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:28:09,381 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 16:28:09,382 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:09,389 NetworkAwareness[DEBUG] self.switch_port_table: {}
+2019-12-05 16:28:09,389 NetworkAwareness[DEBUG] self.switches: []
+2019-12-05 16:28:09,391 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:09,392 NetworkAwareness[DEBUG] self.interior_ports:{}
+2019-12-05 16:28:09,392 NetworkAwareness[DEBUG] self.access_ports: {}
+2019-12-05 16:28:09,392 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:09,394 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:09,394 NetworkAwareness[DEBUG] self.shortest_paths: {}
+2019-12-05 16:28:10,818 NetworkAwareness[INFO] switch: 7 connected
+2019-12-05 16:28:10,820 NetworkAwareness[INFO] add default flow
+2019-12-05 16:28:10,822 NetworkAwareness[INFO] switch: 6 connected
+2019-12-05 16:28:10,823 NetworkAwareness[INFO] add default flow
+2019-12-05 16:28:10,823 NetworkAwareness[INFO] switch: 3 connected
+2019-12-05 16:28:10,823 NetworkAwareness[INFO] add default flow
+2019-12-05 16:28:10,824 NetworkAwareness[INFO] switch: 5 connected
+2019-12-05 16:28:10,824 NetworkAwareness[INFO] add default flow
+2019-12-05 16:28:10,824 NetworkAwareness[INFO] switch: 2 connected
+2019-12-05 16:28:10,825 NetworkAwareness[INFO] add default flow
+2019-12-05 16:28:10,825 NetworkAwareness[INFO] switch: 4 connected
+2019-12-05 16:28:10,825 NetworkAwareness[INFO] add default flow
+2019-12-05 16:28:10,837 sfc_app[DEBUG] register datapath: 5
+2019-12-05 16:28:10,837 sfc_app[DEBUG] register datapath: 7
+2019-12-05 16:28:10,838 sfc_app[DEBUG] register datapath: 2
+2019-12-05 16:28:10,838 sfc_app[DEBUG] register datapath: 6
+2019-12-05 16:28:10,838 sfc_app[DEBUG] register datapath: 3
+2019-12-05 16:28:10,843 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,854 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,854 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,872 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,872 NetworkAwareness[DEBUG] self.interior_ports:{2: set([]), 3: set([1, 2]), 4: set([1, 2]), 5: set([]), 6: set([2, 3]), 7: set([2, 3])}
+2019-12-05 16:28:10,872 NetworkAwareness[DEBUG] self.access_ports: {2: set([1, 2, 3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 4]), 7: set([1, 4])}
+2019-12-05 16:28:10,873 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,875 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,879 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,879 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,885 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,885 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,889 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,889 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,889 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,890 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,892 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,895 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,895 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,900 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,901 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,907 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,909 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,911 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,911 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,912 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,915 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,915 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,916 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,916 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,917 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,918 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,918 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,918 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,919 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,920 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,920 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,921 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,921 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,921 sfc_app[DEBUG] register datapath: 4
+2019-12-05 16:28:10,922 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,922 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,923 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,923 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,924 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,925 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,925 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,926 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,926 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,930 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,930 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,930 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,930 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,931 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,934 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,935 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,936 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,936 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,937 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,938 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,938 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,938 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,939 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,940 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,941 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,942 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,942 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,944 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,944 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,944 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,944 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,945 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,948 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,948 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,950 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,951 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,956 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,957 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,957 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,957 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,958 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,959 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,959 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,960 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,960 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,964 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,965 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,965 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,965 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,966 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,967 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,969 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,970 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,970 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,971 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,971 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,971 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,971 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,972 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,974 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,974 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,975 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,975 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,977 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,977 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,977 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,977 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,978 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,980 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,980 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,981 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,981 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,984 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,984 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,984 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,984 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,985 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,987 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,987 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,988 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,988 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,989 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,989 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,989 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,989 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:10,990 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:10,992 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:10,992 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:10,993 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,993 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:10,995 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:10,996 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:10,996 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:10,997 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:11,000 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:11,006 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:11,006 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:11,007 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,007 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:11,010 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:11,010 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,010 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:11,010 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:11,012 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:11,015 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:11,015 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:11,016 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,016 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:11,019 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:11,019 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,019 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:11,019 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:11,021 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:11,024 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:11,024 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:11,025 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,025 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:11,027 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:11,027 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,027 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:11,027 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:11,028 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:11,030 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:11,030 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:11,031 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,031 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:11,033 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:11,033 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,033 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:11,033 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:11,035 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:11,037 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:11,037 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:11,038 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,038 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:11,042 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:11,042 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,042 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:11,043 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:11,046 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:11,048 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:11,048 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:11,049 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,049 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:11,050 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:11,051 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,051 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:11,051 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:11,052 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:11,053 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:11,053 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:28:11,054 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,054 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:28:11,057 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:28:11,058 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:28:11,058 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:28:11,058 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:28:11,059 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:28:11,060 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:28:12,383 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:28:12,385 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:28:12,385 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:29:09,395 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:29:09,396 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:29:09,396 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:29:09,398 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:29:09,398 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:29:09,399 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:29:09,399 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:29:09,401 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:29:09,402 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:29:12,388 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:29:12,389 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:29:12,389 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:30:09,403 NetworkAwareness[DEBUG] get_topology:
+2019-12-05 16:30:09,404 NetworkAwareness[DEBUG] self.switch_port_table: {2: set([1, 2, 3, 4]), 3: set([1, 2, 3, 4, 5]), 4: set([1, 2, 3, 4, 5]), 5: set([1, 2, 3]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:30:09,404 NetworkAwareness[DEBUG] self.switches: [2, 3, 4, 5, 6, 7]
+2019-12-05 16:30:09,406 NetworkAwareness[DEBUG] self.link_to_port: {(2, 7): (2, 1), (7, 3): (2, 2), (4, 7): (2, 3), (2, 6): (1, 1), (4, 6): (1, 3), (6, 4): (3, 1), (5, 6): (1, 4), (5, 7): (2, 4), (7, 4): (3, 2), (6, 3): (2, 1), (7, 5): (4, 2), (7, 2): (1, 2), (3, 6): (1, 2), (6, 2): (1, 1), (3, 7): (2, 2), (6, 5): (4, 1)}
+2019-12-05 16:30:09,406 NetworkAwareness[DEBUG] self.interior_ports:{2: set([1, 2]), 3: set([1, 2]), 4: set([1, 2]), 5: set([1, 2]), 6: set([1, 2, 3, 4]), 7: set([1, 2, 3, 4])}
+2019-12-05 16:30:09,407 NetworkAwareness[DEBUG] self.access_ports: {2: set([3, 4]), 3: set([3, 4, 5]), 4: set([3, 4, 5]), 5: set([3]), 6: set([]), 7: set([])}
+2019-12-05 16:30:09,407 NetworkAwareness[DEBUG] self.access_table: {(3, 3): (u'192.168.20.31', u'00:00:00:00:00:03'), (4, 5): (u'192.168.20.43', u'00:00:00:00:00:08'), (4, 4): (u'192.168.20.42', u'00:00:00:00:00:07'), (2, 3): (u'192.168.20.21', u'00:00:00:00:00:01'), (4, 3): (u'192.168.20.41', u'00:00:00:00:00:06'), (3, 5): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 4): (u'192.168.20.32', u'00:00:00:00:00:04'), (2, 4): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3): (u'192.168.20.51', u'00:00:00:00:00:09')}
+2019-12-05 16:30:09,409 NetworkAwareness[DEBUG] self.graph: <networkx.classes.digraph.DiGraph object at 0x7fb5219aac50>
+2019-12-05 16:30:09,412 NetworkAwareness[DEBUG] self.shortest_paths: {2: {2: [[2]], 3: [[2, 6, 3]], 4: [[2, 6, 4]], 5: [[2, 6, 5]], 6: [[2, 6]], 7: [[2, 7]]}, 3: {2: [[3, 6, 2]], 3: [[3]], 4: [[3, 6, 4]], 5: [[3, 6, 5]], 6: [[3, 6]], 7: [[3, 7]]}, 4: {2: [[4, 6, 2]], 3: [[4, 6, 3]], 4: [[4]], 5: [[4, 6, 5]], 6: [[4, 6]], 7: [[4, 7]]}, 5: {2: [[5, 6, 2]], 3: [[5, 6, 3]], 4: [[5, 6, 4]], 5: [[5]], 6: [[5, 6]], 7: [[5, 7]]}, 6: {2: [[6, 2]], 3: [[6, 3]], 4: [[6, 4]], 5: [[6, 5]], 6: [[6]], 7: [[6, 2, 7]]}, 7: {2: [[7, 2]], 3: [[7, 3]], 4: [[7, 4]], 5: [[7, 5]], 6: [[7, 2, 6]], 7: [[7]]}}
+2019-12-05 16:30:12,391 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:30:12,393 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:30:12,394 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:34:59,952 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 16:35:00,738 NetworkAwareness[INFO] switch: 7 connected
+2019-12-05 16:35:00,739 NetworkAwareness[INFO] add default flow
+2019-12-05 16:35:00,743 NetworkAwareness[INFO] switch: 3 connected
+2019-12-05 16:35:00,743 NetworkAwareness[INFO] add default flow
+2019-12-05 16:35:00,743 NetworkAwareness[INFO] switch: 5 connected
+2019-12-05 16:35:00,744 NetworkAwareness[INFO] add default flow
+2019-12-05 16:35:00,745 NetworkAwareness[INFO] switch: 6 connected
+2019-12-05 16:35:00,745 NetworkAwareness[INFO] add default flow
+2019-12-05 16:35:00,746 NetworkAwareness[INFO] switch: 4 connected
+2019-12-05 16:35:00,746 NetworkAwareness[INFO] add default flow
+2019-12-05 16:35:00,746 NetworkAwareness[INFO] switch: 2 connected
+2019-12-05 16:35:00,747 NetworkAwareness[INFO] add default flow
+2019-12-05 16:35:00,749 sfc_app[DEBUG] register datapath: 7
+2019-12-05 16:35:00,775 sfc_app[DEBUG] register datapath: 3
+2019-12-05 16:35:00,797 sfc_app[DEBUG] register datapath: 6
+2019-12-05 16:35:00,798 sfc_app[DEBUG] register datapath: 2
+2019-12-05 16:35:00,798 sfc_app[DEBUG] register datapath: 5
+2019-12-05 16:35:00,798 sfc_app[DEBUG] register datapath: 4
+2019-12-05 16:35:02,954 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:35:02,957 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:35:02,957 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:36:02,248 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=6256,dst='192.168.20.33',flags=2,header_length=5,identification=30877,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=37295,data=echo(data='r\xc1\xe8]\x00\x00\x00\x00H\xb2\x03\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=171,seq=1),type=8)>
+2019-12-05 16:36:02,249 sfc_app[DEBUG] new self.pre_ipv4_packet_identification: {4: 30877}
+2019-12-05 16:36:02,249 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:4
+2019-12-05 16:36:02,276 sfc_app[DEBUG] src_sw:4, dst_sw:3
+2019-12-05 16:36:02,277 sfc_app[DEBUG] pre_path: []
+2019-12-05 16:36:02,277 sfc_app[DEBUG] path: [4, 6, 3]
+2019-12-05 16:36:02,277 sfc_app[INFO] dijkstra_path>>> PATH[192.168.20.42 --> 192.168.20.33]: [4, 6, 3]
+2019-12-05 16:36:02,283 sfc_app[DEBUG] inter_link flow install
+2019-12-05 16:36:02,285 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 16:36:02,286 sfc_app[INFO] Add temp flow
+2019-12-05 16:36:02,286 sfc_app[DEBUG] dpid:4,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:05',in_port:4,out_port:1
+2019-12-05 16:36:02,286 sfc_app[INFO] The end of packet_in_handler
+
+2019-12-05 16:36:02,287 NetworkAwareness[DEBUG] self.access_table_distinct: {(2, 3, u'192.168.20.21'): (u'192.168.20.21', u'00:00:00:00:00:01'), (2, 4, u'192.168.20.22'): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3, u'192.168.20.51'): (u'192.168.20.51', u'00:00:00:00:00:09'), (4, 4, u'192.168.20.42'): (u'192.168.20.42', u'00:00:00:00:00:07'), (3, 4, u'192.168.20.32'): (u'192.168.20.32', u'00:00:00:00:00:04'), (4, 3, u'192.168.20.41'): (u'192.168.20.41', u'00:00:00:00:00:06'), (4, 5, u'192.168.20.43'): (u'192.168.20.43', u'00:00:00:00:00:08'), (3, 5, u'192.168.20.33'): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 3, u'192.168.20.31'): (u'192.168.20.31', u'00:00:00:00:00:03')}
+2019-12-05 16:36:02,294 NetworkAwareness[DEBUG] self.access_table_distinct: {(2, 3, u'192.168.20.21'): (u'192.168.20.21', u'00:00:00:00:00:01'), (2, 4, u'192.168.20.22'): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3, u'192.168.20.51'): (u'192.168.20.51', u'00:00:00:00:00:09'), (4, 4, u'192.168.20.42'): (u'192.168.20.42', u'00:00:00:00:00:07'), (3, 4, u'192.168.20.32'): (u'192.168.20.32', u'00:00:00:00:00:04'), (4, 3, u'192.168.20.41'): (u'192.168.20.41', u'00:00:00:00:00:06'), (4, 5, u'192.168.20.43'): (u'192.168.20.43', u'00:00:00:00:00:08'), (3, 5, u'192.168.20.33'): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 3, u'192.168.20.31'): (u'192.168.20.31', u'00:00:00:00:00:03')}
+2019-12-05 16:36:02,295 NetworkAwareness[DEBUG] self.access_table_distinct: {(2, 3, u'192.168.20.21'): (u'192.168.20.21', u'00:00:00:00:00:01'), (2, 4, u'192.168.20.22'): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3, u'192.168.20.51'): (u'192.168.20.51', u'00:00:00:00:00:09'), (4, 4, u'192.168.20.42'): (u'192.168.20.42', u'00:00:00:00:00:07'), (3, 4, u'192.168.20.32'): (u'192.168.20.32', u'00:00:00:00:00:04'), (4, 3, u'192.168.20.41'): (u'192.168.20.41', u'00:00:00:00:00:06'), (4, 5, u'192.168.20.43'): (u'192.168.20.43', u'00:00:00:00:00:08'), (3, 5, u'192.168.20.33'): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 3, u'192.168.20.31'): (u'192.168.20.31', u'00:00:00:00:00:03')}
+2019-12-05 16:36:02,297 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=6256,dst='192.168.20.33',flags=2,header_length=5,identification=30877,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=37295,data=echo(data='r\xc1\xe8]\x00\x00\x00\x00H\xb2\x03\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=171,seq=1),type=8)>
+2019-12-05 16:36:02,299 sfc_app[DEBUG] new self.pre_ipv4_packet_identification: {4: 30877, 6: 30877}
+2019-12-05 16:36:02,299 sfc_app[INFO] packet in dpid:6 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:3
+2019-12-05 16:36:02,301 sfc_app[DEBUG] src_sw:4, dst_sw:3
+2019-12-05 16:36:02,301 sfc_app[DEBUG] pre_path: [4, 6, 3]
+2019-12-05 16:36:02,302 sfc_app[DEBUG] path: [4, 6, 3]
+2019-12-05 16:36:02,302 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 16:36:02,306 sfc_app[INFO] Add temp flow
+2019-12-05 16:36:02,307 sfc_app[DEBUG] dpid:6,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:05',in_port:3,out_port:2
+2019-12-05 16:36:02,307 sfc_app[INFO] The end of packet_in_handler
+
+2019-12-05 16:36:02,308 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=6256,dst='192.168.20.33',flags=2,header_length=5,identification=30877,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=37295,data=echo(data='r\xc1\xe8]\x00\x00\x00\x00H\xb2\x03\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=171,seq=1),type=8)>
+2019-12-05 16:36:02,310 sfc_app[INFO] Dpid:6 Drop dup ipv4 packet
+2019-12-05 16:36:02,963 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:36:02,964 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:36:02,965 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:36:07,486 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 16:36:07,487 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 16:36:07,493 sfc_app[INFO] ARP_PROXY: Drop arp request unicast
+2019-12-05 16:36:07,495 NetworkAwareness[DEBUG] self.access_table_distinct: {(2, 3, u'192.168.20.21'): (u'192.168.20.21', u'00:00:00:00:00:01'), (2, 4, u'192.168.20.22'): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3, u'192.168.20.51'): (u'192.168.20.51', u'00:00:00:00:00:09'), (4, 4, u'192.168.20.42'): (u'192.168.20.42', u'00:00:00:00:00:07'), (3, 4, u'192.168.20.32'): (u'192.168.20.32', u'00:00:00:00:00:04'), (4, 3, u'192.168.20.41'): (u'192.168.20.41', u'00:00:00:00:00:06'), (4, 5, u'192.168.20.43'): (u'192.168.20.43', u'00:00:00:00:00:08'), (3, 5, u'192.168.20.33'): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 3, u'192.168.20.31'): (u'192.168.20.31', u'00:00:00:00:00:03')}
+2019-12-05 16:36:08,510 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 16:36:08,511 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 16:36:08,517 sfc_app[INFO] ARP_PROXY: Drop arp request unicast
+2019-12-05 16:36:08,518 NetworkAwareness[DEBUG] self.access_table_distinct: {(2, 3, u'192.168.20.21'): (u'192.168.20.21', u'00:00:00:00:00:01'), (2, 4, u'192.168.20.22'): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3, u'192.168.20.51'): (u'192.168.20.51', u'00:00:00:00:00:09'), (4, 4, u'192.168.20.42'): (u'192.168.20.42', u'00:00:00:00:00:07'), (3, 4, u'192.168.20.32'): (u'192.168.20.32', u'00:00:00:00:00:04'), (4, 3, u'192.168.20.41'): (u'192.168.20.41', u'00:00:00:00:00:06'), (4, 5, u'192.168.20.43'): (u'192.168.20.43', u'00:00:00:00:00:08'), (3, 5, u'192.168.20.33'): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 3, u'192.168.20.31'): (u'192.168.20.31', u'00:00:00:00:00:03')}
+2019-12-05 16:36:09,534 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 16:36:09,535 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 16:36:09,541 sfc_app[INFO] ARP_PROXY: Drop arp request unicast
+2019-12-05 16:36:09,542 NetworkAwareness[DEBUG] self.access_table_distinct: {(2, 3, u'192.168.20.21'): (u'192.168.20.21', u'00:00:00:00:00:01'), (2, 4, u'192.168.20.22'): (u'192.168.20.22', u'00:00:00:00:00:02'), (5, 3, u'192.168.20.51'): (u'192.168.20.51', u'00:00:00:00:00:09'), (4, 4, u'192.168.20.42'): (u'192.168.20.42', u'00:00:00:00:00:07'), (3, 4, u'192.168.20.32'): (u'192.168.20.32', u'00:00:00:00:00:04'), (4, 3, u'192.168.20.41'): (u'192.168.20.41', u'00:00:00:00:00:06'), (4, 5, u'192.168.20.43'): (u'192.168.20.43', u'00:00:00:00:00:08'), (3, 5, u'192.168.20.33'): (u'192.168.20.33', u'00:00:00:00:00:05'), (3, 3, u'192.168.20.31'): (u'192.168.20.31', u'00:00:00:00:00:03')}
+2019-12-05 16:37:02,968 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:37:02,970 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:37:02,970 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:38:02,973 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:38:02,975 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:38:02,975 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:39:02,977 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:39:02,979 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:39:02,979 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:40:02,981 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:40:02,983 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:40:02,984 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:40:44,521 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 16:40:46,014 NetworkAwareness[INFO] switch: 7 connected
+2019-12-05 16:40:46,016 NetworkAwareness[INFO] add default flow
+2019-12-05 16:40:46,021 NetworkAwareness[INFO] switch: 3 connected
+2019-12-05 16:40:46,022 NetworkAwareness[INFO] add default flow
+2019-12-05 16:40:46,023 NetworkAwareness[INFO] switch: 5 connected
+2019-12-05 16:40:46,023 NetworkAwareness[INFO] add default flow
+2019-12-05 16:40:46,024 NetworkAwareness[INFO] switch: 6 connected
+2019-12-05 16:40:46,024 NetworkAwareness[INFO] add default flow
+2019-12-05 16:40:46,025 NetworkAwareness[INFO] switch: 4 connected
+2019-12-05 16:40:46,025 NetworkAwareness[INFO] add default flow
+2019-12-05 16:40:46,026 NetworkAwareness[INFO] switch: 2 connected
+2019-12-05 16:40:46,027 NetworkAwareness[INFO] add default flow
+2019-12-05 16:40:46,029 sfc_app[DEBUG] register datapath: 7
+2019-12-05 16:40:46,070 sfc_app[DEBUG] register datapath: 3
+2019-12-05 16:40:46,072 sfc_app[DEBUG] register datapath: 4
+2019-12-05 16:40:46,108 sfc_app[DEBUG] register datapath: 6
+2019-12-05 16:40:46,108 sfc_app[DEBUG] register datapath: 2
+2019-12-05 16:40:46,108 sfc_app[DEBUG] register datapath: 5
+2019-12-05 16:40:47,525 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:40:47,527 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:40:47,528 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:41:01,770 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=32444,dst='192.168.20.33',flags=2,header_length=5,identification=4689,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=35755,data=echo(data='\x9d\xc2\xe8]\x00\x00\x00\x00\x1b\xb4\x0b\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=172,seq=1),type=8)>
+2019-12-05 16:41:01,773 sfc_app[INFO] New packet in...
+2019-12-05 16:41:01,774 sfc_app[DEBUG] new self.pre_ipv4_packet_identification: {4: 4689}
+2019-12-05 16:41:01,774 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:4
+2019-12-05 16:41:01,779 sfc_app[DEBUG] src_sw:4, dst_sw:3
+2019-12-05 16:41:01,779 sfc_app[DEBUG] pre_path: []
+2019-12-05 16:41:01,779 sfc_app[DEBUG] path: [4, 6, 3]
+2019-12-05 16:41:01,780 sfc_app[INFO] dijkstra_path>>> PATH[192.168.20.42 --> 192.168.20.33]: [4, 6, 3]
+2019-12-05 16:41:01,783 sfc_app[DEBUG] inter_link flow install
+2019-12-05 16:41:01,784 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 16:41:01,784 sfc_app[INFO] Add temp flow
+2019-12-05 16:41:01,785 sfc_app[DEBUG] dpid:4,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:05',in_port:4,out_port:1
+2019-12-05 16:41:01,796 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=32444,dst='192.168.20.33',flags=2,header_length=5,identification=4689,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=35755,data=echo(data='\x9d\xc2\xe8]\x00\x00\x00\x00\x1b\xb4\x0b\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=172,seq=1),type=8)>
+2019-12-05 16:41:01,797 sfc_app[INFO] New packet in...
+2019-12-05 16:41:01,798 sfc_app[DEBUG] new self.pre_ipv4_packet_identification: {4: 4689, 6: 4689}
+2019-12-05 16:41:01,798 sfc_app[INFO] packet in dpid:6 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:3
+2019-12-05 16:41:01,805 sfc_app[DEBUG] src_sw:4, dst_sw:3
+2019-12-05 16:41:01,805 sfc_app[DEBUG] pre_path: [4, 6, 3]
+2019-12-05 16:41:01,805 sfc_app[DEBUG] path: [4, 6, 3]
+2019-12-05 16:41:01,806 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 16:41:01,807 sfc_app[INFO] Add temp flow
+2019-12-05 16:41:01,808 sfc_app[DEBUG] dpid:6,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:05',in_port:3,out_port:2
+2019-12-05 16:41:01,809 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=32444,dst='192.168.20.33',flags=2,header_length=5,identification=4689,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=35755,data=echo(data='\x9d\xc2\xe8]\x00\x00\x00\x00\x1b\xb4\x0b\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=172,seq=1),type=8)>
+2019-12-05 16:41:01,811 sfc_app[INFO] New packet in...
+2019-12-05 16:41:01,812 sfc_app[INFO] Dpid:6 Drop dup ipv4 packet
+2019-12-05 16:41:01,820 sfc_app[DEBUG] 
+pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='ff:ff:ff:ff:ff:ff',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 16:41:01,825 sfc_app[INFO] New packet in...
+2019-12-05 16:41:01,825 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:ff:ff:ff:ff:ff:ff in_port:5
+2019-12-05 16:41:01,835 sfc_app[INFO] First see the broadcast packet. self.sw_dict: {(3, '00:00:00:00:00:05', '192.168.20.42'): 5}
+2019-12-05 16:41:01,836 sfc_app[INFO] ARP_PROXY: Arp reply
+2019-12-05 16:41:47,531 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:41:47,532 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:41:47,533 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:49:42,499 setting[DEBUG] read from database <link_to_port> table successfully
+2019-12-05 16:49:42,500 setting[DEBUG] read from database <access_table_distinct> table successfully
+2019-12-05 16:49:42,510 setting[DEBUG] read from database <mac_to_port> table successfully
+2019-12-05 16:49:42,511 setting[DEBUG] read from database <link_to_port> table successfully
+2019-12-05 16:49:42,511 setting[DEBUG] read from database <arp_table> table successfully
+2019-12-05 16:49:42,512 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 16:49:42,518 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:42,519 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,548 NetworkAwareness[INFO] switch: 7 connected
+2019-12-05 16:49:43,549 NetworkAwareness[INFO] add default flow
+2019-12-05 16:49:43,551 NetworkAwareness[INFO] switch: 4 connected
+2019-12-05 16:49:43,552 NetworkAwareness[INFO] add default flow
+2019-12-05 16:49:43,552 NetworkAwareness[INFO] switch: 5 connected
+2019-12-05 16:49:43,553 NetworkAwareness[INFO] add default flow
+2019-12-05 16:49:43,553 NetworkAwareness[INFO] switch: 3 connected
+2019-12-05 16:49:43,553 NetworkAwareness[INFO] add default flow
+2019-12-05 16:49:43,554 NetworkAwareness[INFO] switch: 2 connected
+2019-12-05 16:49:43,554 NetworkAwareness[INFO] add default flow
+2019-12-05 16:49:43,555 NetworkAwareness[INFO] switch: 6 connected
+2019-12-05 16:49:43,555 NetworkAwareness[INFO] add default flow
+2019-12-05 16:49:43,565 sfc_app[DEBUG] register datapath: 4
+2019-12-05 16:49:43,566 sfc_app[DEBUG] register datapath: 5
+2019-12-05 16:49:43,567 sfc_app[DEBUG] register datapath: 7
+2019-12-05 16:49:43,567 sfc_app[DEBUG] register datapath: 3
+2019-12-05 16:49:43,603 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,605 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,628 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,629 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,641 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,642 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,650 sfc_app[DEBUG] register datapath: 6
+2019-12-05 16:49:43,651 sfc_app[DEBUG] register datapath: 2
+2019-12-05 16:49:43,653 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,655 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,661 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,663 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,678 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,681 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,695 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,697 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,702 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,707 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,711 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,712 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,715 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,716 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,722 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,723 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,726 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,727 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,733 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,736 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,744 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,745 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,749 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,751 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,754 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,755 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,758 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,759 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,765 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,768 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,776 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,778 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,787 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,789 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,792 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,793 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:43,799 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:49:43,801 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:49:45,514 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:49:45,516 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:49:45,516 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:50:42,522 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:50:42,523 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:50:45,518 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:50:45,520 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:50:45,520 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:51:46,171 setting[DEBUG] read from database <link_to_port> table successfully
+2019-12-05 16:51:46,173 setting[DEBUG] read from database <access_table_distinct> table successfully
+2019-12-05 16:51:46,189 setting[DEBUG] read from database <mac_to_port> table successfully
+2019-12-05 16:51:46,192 setting[DEBUG] read from database <link_to_port> table successfully
+2019-12-05 16:51:46,193 setting[DEBUG] read from database <arp_table> table successfully
+2019-12-05 16:51:46,194 sfc_app[DEBUG] 
+
+
+
+
+
+2019-12-05 16:51:46,208 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:46,209 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,360 NetworkAwareness[INFO] switch: 7 connected
+2019-12-05 16:51:47,361 NetworkAwareness[INFO] add default flow
+2019-12-05 16:51:47,362 NetworkAwareness[INFO] switch: 3 connected
+2019-12-05 16:51:47,363 NetworkAwareness[INFO] add default flow
+2019-12-05 16:51:47,364 NetworkAwareness[INFO] switch: 6 connected
+2019-12-05 16:51:47,364 NetworkAwareness[INFO] add default flow
+2019-12-05 16:51:47,364 NetworkAwareness[INFO] switch: 4 connected
+2019-12-05 16:51:47,365 NetworkAwareness[INFO] add default flow
+2019-12-05 16:51:47,365 NetworkAwareness[INFO] switch: 2 connected
+2019-12-05 16:51:47,365 NetworkAwareness[INFO] add default flow
+2019-12-05 16:51:47,365 NetworkAwareness[INFO] switch: 5 connected
+2019-12-05 16:51:47,366 NetworkAwareness[INFO] add default flow
+2019-12-05 16:51:47,374 sfc_app[DEBUG] register datapath: 3
+2019-12-05 16:51:47,375 sfc_app[DEBUG] register datapath: 6
+2019-12-05 16:51:47,375 sfc_app[DEBUG] register datapath: 7
+2019-12-05 16:51:47,375 sfc_app[DEBUG] register datapath: 4
+2019-12-05 16:51:47,410 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,412 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,420 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,421 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,428 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,429 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,431 sfc_app[DEBUG] register datapath: 2
+2019-12-05 16:51:47,431 sfc_app[DEBUG] register datapath: 5
+2019-12-05 16:51:47,432 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,433 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,436 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,437 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,445 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,446 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,450 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,451 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,454 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,456 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,459 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,460 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,463 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,464 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,467 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,468 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,471 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,472 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,475 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,476 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,479 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,480 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,483 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,484 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,488 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,489 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,493 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,494 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,497 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,498 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,501 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,502 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,505 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,506 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,510 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,511 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:47,515 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:51:47,516 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:51:49,196 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:51:49,198 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:51:49,199 sfc_app[INFO] update all mac_to_port
+2019-12-05 16:51:54,488 sfc_app[INFO] New packet in...
+2019-12-05 16:51:54,489 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=16974,dst='192.168.20.33',flags=2,header_length=5,identification=20159,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=34804,data=echo(data='*\xc5\xe8]\x00\x00\x00\x00\x96g\x07\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=173,seq=1),type=8)>
+2019-12-05 16:51:54,490 sfc_app[DEBUG] new self.pre_ipv4_packet_identification: {4: 20159}
+2019-12-05 16:51:54,491 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:4
+2019-12-05 16:51:54,493 setting[DEBUG] write to database <mac_to_port> table successfully
+2019-12-05 16:51:54,493 sfc_app[DEBUG] src_sw:4, dst_sw:3
+2019-12-05 16:51:54,493 sfc_app[DEBUG] pre_path: []
+2019-12-05 16:51:54,493 sfc_app[DEBUG] path: [4, 6, 3]
+2019-12-05 16:51:54,493 sfc_app[INFO] dijkstra_path>>> PATH[192.168.20.42 --> 192.168.20.33]: [4, 6, 3]
+2019-12-05 16:51:54,494 setting[DEBUG] write to database <pre_path> table successfully
+2019-12-05 16:51:54,497 sfc_app[DEBUG] inter_link flow install
+2019-12-05 16:51:54,497 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 16:51:54,498 sfc_app[INFO] Add temp flow
+2019-12-05 16:51:54,498 sfc_app[DEBUG] dpid:4,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:05',in_port:4,out_port:1
+2019-12-05 16:51:54,507 sfc_app[INFO] New packet in...
+2019-12-05 16:51:54,507 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=16974,dst='192.168.20.33',flags=2,header_length=5,identification=20159,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=34804,data=echo(data='*\xc5\xe8]\x00\x00\x00\x00\x96g\x07\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=173,seq=1),type=8)>
+2019-12-05 16:51:54,508 sfc_app[DEBUG] new self.pre_ipv4_packet_identification: {4: 20159, 6: 20159}
+2019-12-05 16:51:54,509 sfc_app[INFO] packet in dpid:6 src:00:00:00:00:00:07 dst:00:00:00:00:00:05 in_port:3
+2019-12-05 16:51:54,516 setting[DEBUG] write to database <mac_to_port> table successfully
+2019-12-05 16:51:54,517 sfc_app[DEBUG] src_sw:4, dst_sw:3
+2019-12-05 16:51:54,517 sfc_app[DEBUG] pre_path: [4, 6, 3]
+2019-12-05 16:51:54,517 sfc_app[DEBUG] path: [4, 6, 3]
+2019-12-05 16:51:54,517 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 16:51:54,519 sfc_app[INFO] Add temp flow
+2019-12-05 16:51:54,519 sfc_app[DEBUG] dpid:6,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:05',in_port:3,out_port:2
+2019-12-05 16:51:54,520 sfc_app[INFO] New packet in...
+2019-12-05 16:51:54,520 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:05',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=16974,dst='192.168.20.33',flags=2,header_length=5,identification=20159,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=34804,data=echo(data='*\xc5\xe8]\x00\x00\x00\x00\x96g\x07\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=173,seq=1),type=8)>
+2019-12-05 16:51:54,522 sfc_app[INFO] Dpid:6 Drop dup ipv4 packet
+2019-12-05 16:51:59,710 sfc_app[INFO] New packet in...
+2019-12-05 16:51:59,712 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 16:51:59,713 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 16:51:59,718 setting[DEBUG] write to database <mac_to_port> table successfully
+2019-12-05 16:51:59,719 setting[DEBUG] write to database <arp_table> table successfully
+2019-12-05 16:51:59,720 sfc_app[INFO] ARP_PROXY: Drop arp request unicast
+2019-12-05 16:52:00,736 sfc_app[INFO] New packet in...
+2019-12-05 16:52:00,737 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 16:52:00,738 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 16:52:00,741 setting[DEBUG] write to database <mac_to_port> table successfully
+2019-12-05 16:52:00,742 setting[DEBUG] write to database <arp_table> table successfully
+2019-12-05 16:52:00,743 sfc_app[INFO] ARP_PROXY: Drop arp request unicast
+2019-12-05 16:52:01,757 sfc_app[INFO] New packet in...
+2019-12-05 16:52:01,758 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:07',ethertype=2054,src='00:00:00:00:00:05'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.33',src_mac='00:00:00:00:00:05')>
+2019-12-05 16:52:01,759 sfc_app[INFO] packet in dpid:3 src:00:00:00:00:00:05 dst:00:00:00:00:00:07 in_port:5
+2019-12-05 16:52:01,763 setting[DEBUG] write to database <mac_to_port> table successfully
+2019-12-05 16:52:01,764 setting[DEBUG] write to database <arp_table> table successfully
+2019-12-05 16:52:01,765 sfc_app[INFO] ARP_PROXY: Drop arp request unicast
+2019-12-05 16:52:17,737 sfc_app[INFO] New packet in...
+2019-12-05 16:52:17,738 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:09',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=13425,dst='192.168.20.51',flags=2,header_length=5,identification=23690,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=37154,data=echo(data='A\xc5\xe8]\x00\x00\x00\x00r8\x0b\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=174,seq=1),type=8)>
+2019-12-05 16:52:17,739 sfc_app[DEBUG] new self.pre_ipv4_packet_identification: {4: 23690, 6: 20159}
+2019-12-05 16:52:17,740 sfc_app[INFO] packet in dpid:4 src:00:00:00:00:00:07 dst:00:00:00:00:00:09 in_port:4
+2019-12-05 16:52:17,745 setting[DEBUG] write to database <mac_to_port> table successfully
+2019-12-05 16:52:17,746 sfc_app[DEBUG] src_sw:4, dst_sw:5
+2019-12-05 16:52:17,746 sfc_app[DEBUG] pre_path: [4, 6, 3]
+2019-12-05 16:52:17,746 sfc_app[DEBUG] path: [4, 6, 5]
+2019-12-05 16:52:17,746 sfc_app[INFO] dijkstra_path>>> PATH[192.168.20.42 --> 192.168.20.51]: [4, 6, 5]
+2019-12-05 16:52:17,755 setting[DEBUG] write to database <pre_path> table successfully
+2019-12-05 16:52:17,762 sfc_app[DEBUG] inter_link flow install
+2019-12-05 16:52:17,764 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 16:52:17,766 sfc_app[INFO] Add temp flow
+2019-12-05 16:52:17,766 sfc_app[DEBUG] dpid:4,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:09',in_port:4,out_port:1
+2019-12-05 16:52:17,777 sfc_app[INFO] New packet in...
+2019-12-05 16:52:17,780 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:09',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=13425,dst='192.168.20.51',flags=2,header_length=5,identification=23690,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=37154,data=echo(data='A\xc5\xe8]\x00\x00\x00\x00r8\x0b\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=174,seq=1),type=8)>
+2019-12-05 16:52:17,782 sfc_app[DEBUG] new self.pre_ipv4_packet_identification: {4: 23690, 6: 23690}
+2019-12-05 16:52:17,782 sfc_app[INFO] packet in dpid:6 src:00:00:00:00:00:07 dst:00:00:00:00:00:09 in_port:3
+2019-12-05 16:52:17,786 setting[DEBUG] write to database <mac_to_port> table successfully
+2019-12-05 16:52:17,787 sfc_app[DEBUG] src_sw:4, dst_sw:5
+2019-12-05 16:52:17,787 sfc_app[DEBUG] pre_path: [4, 6, 5]
+2019-12-05 16:52:17,787 sfc_app[DEBUG] path: [4, 6, 5]
+2019-12-05 16:52:17,787 sfc_app[INFO] ipv4: update_mac_to_port
+2019-12-05 16:52:17,789 sfc_app[INFO] Add temp flow
+2019-12-05 16:52:17,789 sfc_app[DEBUG] dpid:6,src:'00:00:00:00:00:07',dst:'00:00:00:00:00:09',in_port:3,out_port:4
+2019-12-05 16:52:17,791 sfc_app[INFO] New packet in...
+2019-12-05 16:52:17,791 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='00:00:00:00:00:09',ethertype=2048,src='00:00:00:00:00:07'), ipv4(csum=13425,dst='192.168.20.51',flags=2,header_length=5,identification=23690,offset=0,option=None,proto=1,src='192.168.20.42',tos=0,total_length=84,ttl=64,version=4), icmp(code=0,csum=37154,data=echo(data='A\xc5\xe8]\x00\x00\x00\x00r8\x0b\x00\x00\x00\x00\x00\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567',id=174,seq=1),type=8)>
+2019-12-05 16:52:17,794 sfc_app[INFO] Dpid:6 Drop dup ipv4 packet
+2019-12-05 16:52:17,806 sfc_app[INFO] New packet in...
+2019-12-05 16:52:17,806 sfc_app[DEBUG] pkt.get_protocols: <bound method Packet.get_protocols of ethernet(dst='ff:ff:ff:ff:ff:ff',ethertype=2054,src='00:00:00:00:00:09'), arp(dst_ip='192.168.20.42',dst_mac='00:00:00:00:00:00',hlen=6,hwtype=1,opcode=1,plen=4,proto=2048,src_ip='192.168.20.51',src_mac='00:00:00:00:00:09')>
+2019-12-05 16:52:17,807 sfc_app[INFO] packet in dpid:5 src:00:00:00:00:00:09 dst:ff:ff:ff:ff:ff:ff in_port:3
+2019-12-05 16:52:17,810 setting[DEBUG] write to database <mac_to_port> table successfully
+2019-12-05 16:52:17,811 setting[DEBUG] write to database <arp_table> table successfully
+2019-12-05 16:52:17,811 sfc_app[INFO] First see the broadcast packet. self.sw_dict: {(5, '00:00:00:00:00:09', '192.168.20.42'): 3}
+2019-12-05 16:52:17,812 sfc_app[INFO] ARP_PROXY: Arp reply
+2019-12-05 16:52:46,213 setting[DEBUG] write to database <link_to_port> table successfully
+2019-12-05 16:52:46,214 setting[DEBUG] write to database <access_table_distinct> table successfully
+2019-12-05 16:52:49,202 sfc_app[DEBUG] access_table_distinct_items length: 9
+2019-12-05 16:52:49,205 sfc_app[DEBUG] update_mac_to_port_all count: 36
+2019-12-05 16:52:49,205 sfc_app[INFO] update all mac_to_port
