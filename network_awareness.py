@@ -54,7 +54,7 @@ ETHERNET = ethernet.ethernet.__name__
 ETHERNET_MULTICAST = "ff:ff:ff:ff:ff:ff"
 ETHERNET_GROUP_MULTICAST = "01:00:5e:00:00:fb"
 ARP = arp.arp.__name__
-
+IPv4 = ipv4.ipv4.__name__
 
 class NetworkAwareness(app_manager.RyuApp):
     """
@@ -382,10 +382,11 @@ class NetworkAwareness(app_manager.RyuApp):
         pkt = packet.Packet(msg.data)
         eth = pkt.get_protocols(ethernet.ethernet)[0]  # pkt.get_protocols(ethernet.ethernet)是个列表，列表里只有一个元素，用[0]直接取出元素
                                                        # 所有的包都有以太网头部，所以能直接get，但是ip等协议需要判断是否存在
-
+        # 包过滤开始
         if eth.ethertype == ether_types.ETH_TYPE_LLDP or eth.ethertype == ether_types.ETH_TYPE_IPV6:
             # ignore lldp packet 
             return
+            
         dst = eth.dst
         src = eth.src
 #        dpid = datapath.id
@@ -393,7 +394,34 @@ class NetworkAwareness(app_manager.RyuApp):
         if dst == ETHERNET_GROUP_MULTICAST:
             # ignore mDNS packet
             return
-              
+            
+        if eth.ethertype == ether_types.ETH_TYPE_IP and dst == ETHERNET_MULTICAST:  # DHCP广播包, IP=0x0800
+            # drop DHCP packet
+            self.logger.debug("Drop ip_type and eth_dst == ff:ff:ff:ff:ff:ff")
+            out = datapath.ofproto_parser.OFPPacketOut(            
+                    datapath=datapath,                                 
+                    buffer_id=datapath.ofproto.OFP_NO_BUFFER,           
+                    in_port=in_port,
+                    actions=[], data=None)
+            datapath.send_msg(out)               
+            return
+        
+        header_list = dict( (p.protocol_name, p)for p in pkt.protocols if type(p) != str)
+#        print "header_list:", header_list
+        if IPv4 in header_list:
+            ipv4_packet = pkt.get_protocols(ipv4.ipv4)[0]
+#            print "pkt.get_protocols(ipv4.ipv4)[0]:", pkt.get_protocols(ipv4.ipv4)[0], '\n'
+            if ipv4_packet.src == "0.0.0.0" or ipv4_packet.dst == "255.255.255.255":    # DHCP广播包
+                self.logger.debug("Drop ip_src == 0.0.0.0 or ip_dst == 255.255.255.255")  
+                out = datapath.ofproto_parser.OFPPacketOut(            
+                    datapath=datapath,                                 
+                    buffer_id=datapath.ofproto.OFP_NO_BUFFER,           
+                    in_port=in_port,
+                    actions=[], data=None)
+                datapath.send_msg(out)  
+                return
+        # 包过滤结束
+                
         # 获取access info
         arp_pkt = pkt.get_protocol(arp.arp)
         ip_pkt = pkt.get_protocol(ipv4.ipv4)  # 如果没有这个包就赋值None

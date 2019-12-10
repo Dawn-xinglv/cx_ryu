@@ -300,7 +300,7 @@ class sfc_app (app_manager.RyuApp):
 
         self.logger.debug('\n'*5)
         # start timer-----
-        timer = threading.Timer(3, self.fun_timer)
+        timer = threading.Timer(5, self.fun_timer)
         timer.start()
         
         
@@ -393,14 +393,13 @@ class sfc_app (app_manager.RyuApp):
         '''     
         out_port = ofproto.OFPP_FLOOD 
                          
-        # 包过滤开始
         pkt = packet.Packet(msg.data)
         eth = pkt.get_protocols(ethernet.ethernet)[0]  # pkt.get_protocols(ethernet.ethernet)是个列表，列表里只有一个元素，用[0]直接取出元素
                                                        # 所有的包都有以太网头部，所以能直接get，但是ip等协议需要判断是否存在
 #        print "pkt.get_protocols:", pkt.get_protocols, '\n'
 #        print "pkt.get_protocols(ethernet.ethernet)[0]:", pkt.get_protocols(ethernet.ethernet)[0], '\n'
 
-
+        # 包过滤开始
         if eth.ethertype == ether_types.ETH_TYPE_LLDP or eth.ethertype == ether_types.ETH_TYPE_IPV6:
             # ignore lldp packet 
             return
@@ -413,6 +412,7 @@ class sfc_app (app_manager.RyuApp):
             # ignore mDNS packet
 #            print "Ignore eth_dst == 01:00:5e:00:00:fb"
             return
+            
         if eth.ethertype == ether_types.ETH_TYPE_IP and dst == ETHERNET_MULTICAST:  # DHCP广播包, IP=0x0800
             # drop DHCP packet
             self.logger.debug("Drop ip_type and eth_dst == ff:ff:ff:ff:ff:ff")
@@ -441,6 +441,7 @@ class sfc_app (app_manager.RyuApp):
                 datapath.send_msg(out)  
                 return
         # 包过滤结束
+        
         print ''  # new line
         self.logger.info('New packet in...')
         self.logger.debug("pkt.get_protocols: %s", pkt.get_protocols)
