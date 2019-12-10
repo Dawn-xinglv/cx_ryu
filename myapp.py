@@ -827,6 +827,8 @@ class sfc_app (app_manager.RyuApp):
                                       self.awareness.link_to_port,
                                       self.awareness.access_table_distinct, path,
                                       flow_info, msg.buffer_id, msg.data)
+                else:
+                    self.logger.info("path == pre_path: %s", path)
             return True  # successful
         else:   # not found host information
             self.logger.info('Host information is not found')
